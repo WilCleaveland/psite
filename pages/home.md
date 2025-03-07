@@ -10,8 +10,7 @@ meta_title: Marketer in Roanoke, VA
 lead:
   enabled: true
   heading: "I help online businesses move up and to the right.📈" 
-  description: "Press the easy-button for scaling your online biz across both owned and paid media with someone who's done it before. Here's a quick video from my best long-term partner: <br><br> <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/o-HUReRYVvM?si=ynzm8x4eQgfaGwJX\" frameborder=
-  \"0\"> </iframe>" 
+  description: "Press the easy-button for scaling your online biz across both owned and paid media with someone who's done it before. Here's a quick video from my best long-term partner: <br><br> <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/o-HUReRYVvM?si=E4ketfpzkglMljIK\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>" 
   show_social_media_icons: false
   avatar:
     avatar_image: "assets/images/avatar/avatar.jpg"
