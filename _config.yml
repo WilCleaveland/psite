@@ -132,7 +132,7 @@ open_graph:
   meta_twitter_creator: ""
 
 darkmode:
-  enable_dark_mode: true
+  enable_dark_mode: false
   show_dark_mode_toggle_in_header: true
   show_dark_mode_toggle_in_footer: false
   show_dark_mode_toggle_in_bottom: false
