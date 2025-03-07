@@ -128,8 +128,8 @@ header:
 open_graph:
   meta_opengraph_type: "website"
   meta_twitter_card: "summary"
-  meta_twitter_site: "@zerostaticio"
-  meta_twitter_creator: "@zerostaticio"
+  meta_twitter_site: ""
+  meta_twitter_creator: ""
 
 darkmode:
   enable_dark_mode: true
@@ -168,7 +168,7 @@ contact_form:
 
 menu: 
   show_dropdown_items_in_mobile_menu: false
-  show_social_media_in_mobile_menu: true
+  show_social_media_in_mobile_menu: false
 
 footer:
   enable_footer: false # show/hide the entire footer
@@ -186,5 +186,5 @@ footer:
 bottom:
   enable_bottom: false # show/hide the entire bottom (below the footer)
   enable_bottom_menu: false # if enabled, the bottom menu can be edited in `_data/menu.yml`
-  copyright_text: "© 2021 Zerostatic Themes"
+  copyright_text: "© 2025"
   show_rss_icon: true

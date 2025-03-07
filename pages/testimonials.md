@@ -17,7 +17,8 @@ His abilities are quickly eclipsing "up-and-comer" status, and I strongly recomm
 
 Just please don't send him too much work... I'd like to keep working with Wil for a long time. ;-)"
 
-**- Ryan Healy, Upsender**
+
+**- Ryan Healy, [Upsender](https://upsender.com/)**
 
 ---------
 
@@ -35,15 +36,16 @@ Wil does all of that.
 
 Period."
 
-**- Lou Cozzolino, Dedicated Emails LLC**
+**- Lou Cozzolino, [Lone Survivalist](https://lonesurvivalist.com/)**
 
 ---------
 
 "I'm super impressed with Wil's ability to deliver quality copy on time and on budget. He is easy to work with and gets things right the first time (e.g. doesn't require handholding or endless revisions)." 
 
-**- Drew Kossoff, Rainmaker Ad Ventures**
+**- Drew Kossoff, [Rainmaker Ad Ventures](https://rainmakeradventures.com/)**
 
----------
+<!---
+
 
 "Wil is an incredible copywriter.
 
@@ -61,7 +63,8 @@ I attribute a lot of my current copywriting skills to Wil’s patience and coach
 
 It’s been a pleasure working with Wil, and wouldn’t hesitate to do so again in the future."
 
-**- James Wilder** 
+**- James Wilder, Advertising Hustle** 
+--->
 
 ---------
 
@@ -71,4 +74,4 @@ His process was seamless, and he got the tone and voice for our audience almost 
 
 We're anxiously counting down till launch day so we can test it out!"
 
-**- Ben Steuart**
+**- Ben Steuart, [Steuart's Natural Health](https://steuartsnatural.health/)**
