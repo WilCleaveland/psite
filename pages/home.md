@@ -10,7 +10,7 @@ meta_title: Marketer in Roanoke, VA
 lead:
   enabled: true
   heading: "I help online businesses move up and to the right.📈" 
-  description: "Press the easy-button for scaling your online biz across both owned and paid media with someone who's done it before. Here's a quick video from my best long-term partner: <br><br> <div class=\"ratio ratio-16x9\"><iframe src=\"https://www.youtube.com/embed/o-HUReRYVvM?si=E4ketfpzkglMljIK\" title=\"YouTube video player\" allowfullscreen></iframe>" 
+  description: "Press the easy-button for scaling your online biz across both owned and paid media with someone who's done it before. Here's a quick video from my best long-term partner: <br><br> <div class=\"ratio ratio-16x9\"><iframe src=\"https://player.vimeo.com/video/1063842926?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Adam&#039;s Testimonial - Sicuro Brands\"> </iframe> <script src=\"https://player.vimeo.com/api/player.js\"></script> </div>" 
   show_social_media_icons: false
   avatar:
     avatar_image: "assets/images/avatar/avatar.jpg"
