@@ -8,3 +8,7 @@ main:
   - name: Testimonials
     url: /testimonials/
     weight: 3
+  - name: LinkedIn
+    url: "https://www.linkedin.com/in/wilcleaveland/"
+    target: "_blank"
+    weight: 4
