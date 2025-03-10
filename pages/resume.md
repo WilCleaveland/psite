@@ -7,5 +7,6 @@ description: "What I've been up to..."
 image: 
 align: "center"
 ---
-![Resume]({{site.baseurl}}/images/wilcleavelandresume.png)
+<iframe src="{{ site.url }}{{ site.baseurl }}/images/wilcleavelandresume.pdf#toolbar=0" width="100%" height="950px"> </iframe>
+
 

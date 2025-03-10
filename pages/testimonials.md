@@ -16,8 +16,7 @@ I can toss him an idea and let him run with it without ever worrying if we're on
 His abilities are quickly eclipsing "up-and-comer" status, and I strongly recommend you work with him. (In fact, I often send him referrals.)
 
 Just please don't send him too much work... I'd like to keep working with Wil for a long time. ;-)"
-
-
+<br><img src="https://wilcleave.land/images/ryan_healy.jpg" style="max-width: 100px; border-radius: 50%; margin: 25px;"><br>
 **- Ryan Healy, [Upsender](https://upsender.com/)**
 
 ---------
@@ -35,13 +34,13 @@ Frankly, copy is a key component that makes the rain inside any business. Most c
 Wil does all of that.
 
 Period."
-
+<br><img src="https://wilcleave.land/images/lou_cozzolino.jpg" style="max-width: 100px; border-radius: 50%; margin: 25px;"><br>
 **- Lou Cozzolino, [Lone Survivalist](https://lonesurvivalist.com/)**
 
 ---------
 
-"I'm super impressed with Wil's ability to deliver quality copy on time and on budget. He is easy to work with and gets things right the first time (e.g. doesn't require handholding or endless revisions)." 
-
+"I'm super impressed with Wil's ability to **deliver quality copy on time and on budget.** He is easy to work with and gets things right the first time (e.g. doesn't require handholding or endless revisions)." 
+<br><img src="https://wilcleave.land/images/drew_kossoff.jpg" style="max-width: 100px; border-radius: 50%; margin: 25px;"><br>
 **- Drew Kossoff, [Rainmaker Ad Ventures](https://rainmakeradventures.com/)**
 
 <!---
@@ -73,5 +72,5 @@ It’s been a pleasure working with Wil, and wouldn’t hesitate to do so again 
 His process was seamless, and he got the tone and voice for our audience almost perfect right out of the gate. He even found a great clinical study for an ingredient in our product that we had yet to discover ourselves. Then he integrated it right into the copy. 
 
 We're anxiously counting down till launch day so we can test it out!"
-
+<br><img src="https://wilcleave.land/images/ben_steuart.jpg" style="max-width: 100px; border-radius: 50%; margin: 25px;"><br>
 **- Ben Steuart, [Steuart's Natural Health](https://steuartsnatural.health/)**
