@@ -2,7 +2,7 @@
 title: "VNSH Laser Strike System"
 description: "Over several months, I wrote multiple versions of this flow, which sells a dry-fire laser handgun training system. You can see the final control front-end page below.
 <br><br>- $1.8M Lifetime Gross Revenue (both internal & cold traffic)<br>- 3.5% Conversion Rate at Launch<br>- $180 AOV<br>" 
-date: 2025-03-06T10:24:47+10:00
+date: 2025-03-10T10:24:47+10:00
 categories: ["Samples"]
 icon: "assets/images/icons/icons8-signature-50.png"
 image: "/images/laserstrike.jpg"

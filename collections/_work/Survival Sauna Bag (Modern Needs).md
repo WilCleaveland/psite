@@ -1,7 +1,7 @@
 ---
 title: "Modern Needs Survival Sauna Bag"
 description: "Getting a decent AOV for cold traffic was a tough nut to crack, but we eventually got there with MQ pricing that offers a juicy free bonus for quantities of 4+.🤠<br><br>- $1.5M Lifetime Gross Revenue (across internal and cold traffic)<br>- 3.7% Conversion Rate at Launch<br>- $70 AOV<br>" 
-date: 2025-03-06T10:24:47+10:00
+date: 2025-03-09T10:24:47+10:00
 categories: ["Samples"]
 icon: "assets/images/icons/icons8-signature-50.png"
 image: "/images/esb.jpg"
