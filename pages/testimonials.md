@@ -7,6 +7,14 @@ permalink: "/testimonials/"
 # Here are some comments from others I've helped...
 ###
 
+"Wil has been very effective at maximizing revenue from our internal lists and generating winning funnel copy for all our brands — in both good times and bad. 
+
+In a niche where we’re constantly facing challenges consistently scale on cold traffic, **Wil’s performance is one constant we’ve been extremely thankful to count on!**" 
+<br><img src="https://wilcleave.land/images/nate.png" style="max-width: 100px; border-radius: 50%; margin: 25px;"><br>
+**-Nathan Hopkins, [Sicuro Brands](https://sicurobrands.com/)**
+
+---------
+
 **"I've outsourced to other writers here and there, but Wil is my go-to guy when I need to outsource copy.**
 
 He has excellent research skills. He's self-motivated. He hits deadlines. And he writes damn good copy.
