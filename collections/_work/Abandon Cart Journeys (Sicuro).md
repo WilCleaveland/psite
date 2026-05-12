@@ -88,6 +88,7 @@ intro_offset: "-75px"
     border-top: 1px solid #f0f0f0;
     font-size: 0.95rem;
     line-height: 1.55;
+    color: #2f2e2a;
   }
   .abandon-journeys .aj-email-body p { margin: 0 0 12px; }
   .abandon-journeys .aj-link {
