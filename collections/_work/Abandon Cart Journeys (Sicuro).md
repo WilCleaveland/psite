@@ -90,6 +90,12 @@ intro_offset: "-75px"
     line-height: 1.55;
     color: #2f2e2a;
   }
+  .abandon-journeys .aj-email-body p,
+  .abandon-journeys .aj-email-body li,
+  .abandon-journeys .aj-email-body strong,
+  .abandon-journeys .aj-email-body em {
+    color: #2f2e2a;
+  }
   .abandon-journeys .aj-email-body p { margin: 0 0 12px; }
   .abandon-journeys .aj-link {
     color: #114c29;
