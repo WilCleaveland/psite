@@ -12,7 +12,7 @@ main:
       - name: Patriot Training Center
         url: /patriot-training-center/
       - name: Automations
-        url: /automations/
+        url: /work/Abandon%20Cart%20Journeys%20(Sicuro)/ # currently the only Automations sample; revert to /automations/ once there's more than one
   - name: Resume
     url: /resume/
     weight: 2
