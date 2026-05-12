@@ -2,6 +2,17 @@ main:
   - name: Work
     url: /work/
     weight: 1
+    child:
+      - name: All Work
+        url: /work/
+      - name: Sicuro Brands
+        url: /sicuro/
+      - name: Nicus Software
+        url: /nicus-software/
+      - name: Patriot Training Center
+        url: /patriot-training-center/
+      - name: Automations
+        url: /automations/
   - name: Resume
     url: /resume/
     weight: 2

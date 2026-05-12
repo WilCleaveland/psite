@@ -1,7 +1,7 @@
 ---
-layout: works
+layout: work-overview
 title: "Work"
-description: "A selection of my most recent and best-performing copy..."
-date: 2018-11-28T15:15:34+10:00
+description: "A selection of my best copy across the years. Filter by company or content type."
+permalink: "/work/"
 align: "center"
 ---

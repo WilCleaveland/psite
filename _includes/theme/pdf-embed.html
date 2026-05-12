@@ -1,0 +1,54 @@
+{%- comment -%}
+  Embed a PDF with a "open in new tab" button on top and an inline preview iframe below.
+  Usage:
+    {% include theme/pdf-embed.html src="/path/to/file.pdf" %}
+    {% include theme/pdf-embed.html src="/path/to/file.pdf" height="1400px" %}
+{%- endcomment -%}
+
+{%- assign src = include.src -%}
+{%- assign height = include.height | default: "1100px" -%}
+
+<style>
+  .pdf-embed-wrapper {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  a.pdf-embed-open-btn,
+  a.pdf-embed-open-btn:link,
+  a.pdf-embed-open-btn:visited,
+  a.pdf-embed-open-btn:hover,
+  a.pdf-embed-open-btn:active,
+  a.pdf-embed-open-btn:focus {
+    display: inline-block;
+    padding: 10px 24px;
+    background: #114c29 !important;
+    color: #ffffff !important;
+    border-radius: 999px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    transition: filter 0.15s ease, transform 0.15s ease;
+  }
+  a.pdf-embed-open-btn:hover,
+  a.pdf-embed-open-btn:focus {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+  }
+  .pdf-embed-iframe {
+    display: block;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    background: #fafafa;
+  }
+</style>
+
+<div class="pdf-embed-wrapper">
+  <a href="{{ src | relative_url }}" target="_blank" rel="noopener" class="pdf-embed-open-btn">
+    Open PDF in new tab ↗
+  </a>
+  <iframe class="pdf-embed-iframe" src="{{ src | relative_url }}#toolbar=0" height="{{ height }}" loading="lazy"></iframe>
+</div>

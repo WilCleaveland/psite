@@ -1,0 +1,60 @@
+{%- comment -%}
+  Render an image with an "Open Image In New Tab" button above it.
+  Usage:
+    {% include theme/image-embed.html src="/images/foo.png" alt="Email #1" %}
+{%- endcomment -%}
+
+{%- assign src = include.src -%}
+{%- assign alt = include.alt | default: "" -%}
+
+<style>
+  .image-embed-wrapper {
+    display: block;
+    text-align: center !important;
+    margin: 0 auto 32px;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+  a.image-embed-open-btn,
+  a.image-embed-open-btn:link,
+  a.image-embed-open-btn:visited,
+  a.image-embed-open-btn:hover,
+  a.image-embed-open-btn:active,
+  a.image-embed-open-btn:focus {
+    display: inline-block;
+    padding: 10px 24px;
+    background: #114c29 !important;
+    color: #ffffff !important;
+    border-radius: 999px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 2px;
+    transition: filter 0.15s ease, transform 0.15s ease;
+  }
+  a.image-embed-open-btn:hover,
+  a.image-embed-open-btn:focus {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+  }
+  .image-embed-img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+    vertical-align: top;
+  }
+</style>
+
+<div class="image-embed-wrapper">
+  <a href="{{ src | relative_url }}" target="_blank" rel="noopener" class="image-embed-open-btn">
+    Open Image In New Tab ↗
+  </a>
+  <img class="image-embed-img" src="{{ src | relative_url }}" alt="{{ alt }}" loading="lazy" />
+</div>

@@ -227,14 +227,27 @@
     font-size: 0.8rem;
     font-family: var(--font-family-monospace);
     display: flex;
+    flex-wrap: wrap;
     .card-category {
       margin: 0 5px 5px 0;
       a {
+        display: inline-block;
         padding: 4px 12px;
         background-color: var(--color-base-bg-3);
         color: var(--color-base-bg-3-text);
         border-radius: 12px;
+        white-space: nowrap;
       }
     }
+  }
+}
+
+// Tighten consecutive H1s in work sample bodies so two stacked
+// markdown headings (e.g. "See the Front End Sales Page Here"
+// followed by "Some of my best internal emails…") read as a single
+// tight block instead of two separated headings.
+.page-work .content {
+  h1 + h1 {
+    margin-top: 0;
   }
 }

@@ -24,6 +24,10 @@ body_classes: page-works
 </div>
 
 {% assign cards = site.work | sort: 'date' | reverse %}
+{% if page.category %}
+  {% assign cat = page.category %}
+  {% assign cards = cards | where_exp: "item", "item.categories contains cat" %}
+{% endif %}
 <div class="section bg-base-bg">
   <div class="container">
     <div class="row">

@@ -1,0 +1,169 @@
+---
+layout: default
+body_classes: page-work-overview
+---
+
+<div class="section">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-md-10">
+        <div class="intro">
+          {% if page.title %}
+          <h1>{{ page.title }}</h1>
+          {% endif %}
+          {% if page.description %}
+          <p>{{ page.description }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- comment -%} Collect every unique category across all work items {%- endcomment -%}
+{% assign cards = site.work | sort: 'date' | reverse %}
+{% assign all_cats = "" | split: "" %}
+{% for card in cards %}
+  {% for cat in card.categories %}
+    {% unless all_cats contains cat %}
+      {% assign all_cats = all_cats | push: cat %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+{% assign all_cats = all_cats | sort %}
+
+<style>
+  .work-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 0 auto 32px;
+    max-width: 900px;
+  }
+  .work-filter button {
+    padding: 6px 14px;
+    border: 1px solid #d8d8d8;
+    background: transparent;
+    color: inherit;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .work-filter button:hover {
+    border-color: #46e385;
+  }
+  .work-filter button.active {
+    background: #46e385;
+    border-color: #46e385;
+    color: #114c29;
+    font-weight: 600;
+  }
+  .work-card-wrapper.hidden { display: none; }
+  .work-empty-state {
+    text-align: center;
+    color: #848484;
+    padding: 24px 0 8px;
+    display: none;
+  }
+  .work-empty-state.visible { display: block; }
+</style>
+
+<div class="section bg-base-bg">
+  <div class="container">
+
+    <div class="work-filter" id="work-filter">
+      <button class="active" data-filter="all" type="button">All</button>
+      {% for cat in all_cats %}
+        <button data-filter="{{ cat | slugify }}" type="button">{{ cat }}</button>
+      {% endfor %}
+    </div>
+
+    <div class="row" id="work-grid">
+      {% for card in cards %}
+        {%- assign slugs = "" -%}
+        {%- for cat in card.categories -%}
+          {%- assign cat_slug = cat | slugify -%}
+          {%- assign slugs = slugs | append: cat_slug | append: " " -%}
+        {%- endfor -%}
+        <div class="col-12 col-md-4 col-lg-4 mb-3 work-card-wrapper" data-categories="{{ slugs | strip }}">
+          {% include theme/card.html project=card %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="work-empty-state" id="work-empty-state">No samples in that category yet.</div>
+
+  </div>
+</div>
+
+{% if page.content and page.content != "" %}
+<div class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="content">{{ content }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<script>
+  (function () {
+    const filterContainer = document.getElementById('work-filter');
+    const cards = document.querySelectorAll('.work-card-wrapper');
+    const emptyState = document.getElementById('work-empty-state');
+    if (!filterContainer || !cards.length) return;
+
+    function applyFilter(filter) {
+      let visibleCount = 0;
+      cards.forEach((card) => {
+        const cats = (card.getAttribute('data-categories') || '').split(' ').filter(Boolean);
+        const show = filter === 'all' || cats.indexOf(filter) !== -1;
+        card.classList.toggle('hidden', !show);
+        if (show) visibleCount++;
+      });
+      filterContainer.querySelectorAll('button').forEach((b) => {
+        b.classList.toggle('active', b.getAttribute('data-filter') === filter);
+      });
+      if (emptyState) emptyState.classList.toggle('visible', visibleCount === 0);
+    }
+
+    const validFilters = Array.from(filterContainer.querySelectorAll('button'))
+      .map((b) => b.getAttribute('data-filter'));
+
+    filterContainer.addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      const filter = btn.getAttribute('data-filter');
+      applyFilter(filter);
+      const url = filter === 'all'
+        ? window.location.pathname
+        : window.location.pathname + '#' + filter;
+      history.replaceState(null, '', url);
+    });
+
+    // React to hash changes (e.g. clicking a category badge on this same page,
+    // or navigating to /work/#email from another page in the same tab).
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (!hash) {
+        applyFilter('all');
+        return;
+      }
+      if (validFilters.indexOf(hash) !== -1) {
+        applyFilter(hash);
+        // Bring the filter row into view so the user sees the result.
+        filterContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    const initialHash = window.location.hash.replace('#', '');
+    if (initialHash && validFilters.indexOf(initialHash) !== -1) {
+      applyFilter(initialHash);
+    }
+  })();
+</script>

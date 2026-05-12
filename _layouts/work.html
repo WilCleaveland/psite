@@ -28,7 +28,7 @@ body_classes: page-work
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-lg-8">
-        <div class="content" style="margin-top: -150px; text-align: center;">{{ content }}</div>
+        <div class="content" style="margin-top: {{ page.intro_offset | default: '-150px' }}; text-align: center;">{{ content }}</div>
       </div>
     </div>
   </div>

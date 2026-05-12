@@ -51,6 +51,13 @@ defaults:
 # SCSS
 sass:
   style: compact
+  quiet_deps: true
+  silence_deprecations:
+    - import
+    - if-function
+    - global-builtin
+    - color-functions
+    - mixed-decls
 
 # Excludes
 exclude:
@@ -166,8 +173,8 @@ contact_form:
   formspree_endpoint: https://formspree.io/f/moqyklqv
   netlify_form_name: "contact"
 
-menu: 
-  show_dropdown_items_in_mobile_menu: false
+menu:
+  show_dropdown_items_in_mobile_menu: true
   show_social_media_in_mobile_menu: false
 
 footer:
