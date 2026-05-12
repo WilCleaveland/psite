@@ -23,6 +23,7 @@ lead:
       text: "Book a Call"
       external: true
       dot: "#46e385" # you can use any color
+      enabled: false # flip to true to show this button
 
 work:
   enabled: false

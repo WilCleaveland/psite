@@ -1,6 +1,7 @@
 <div class="menu-main">
   <ul>
     {% for item in site.data.menu.main %}
+      {% if item.enabled == false %}{% continue %}{% endif %}
       {% if item.child %}
 
         {% assign active_parent = false %}

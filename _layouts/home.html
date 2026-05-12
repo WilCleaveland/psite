@@ -37,7 +37,9 @@ body_classes: page-home
             {% assign url = button.url | default: false %}
             {% assign text = button.text | default: false %}
             {% assign dot = button.dot | default: false %}
+            {% assign enabled = button.enabled %}
 
+            {% unless enabled == false %}
             <a href="{% if external %}{{ url }}{% else %}{{ url | relative_url }}{% endif %}" {% if external
               %}target="_blank" rel="noopener" {% endif %} class="status">
               {% if dot %}
@@ -47,6 +49,7 @@ body_classes: page-home
               {% endif %}
               <span class="status-text">{{ text }}</span>
             </a>
+            {% endunless %}
 
             {% endfor %}
           </div>

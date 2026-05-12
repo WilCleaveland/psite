@@ -11,6 +11,7 @@
     {% if site.menu.show_dropdown_items_in_mobile_menu %}
       <ul class="menu">
         {% for item in site.data.menu.main %}
+          {% if item.enabled == false %}{% continue %}{% endif %}
           {% if item.child %}
             <li class="menu-item-{{ item.name | downcase }}{% if item.url == page.url %} active{% endif %}">
               <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
@@ -39,6 +40,7 @@
     {% else %}
       <ul class="menu">
         {% for item in site.data.menu.main %}
+          {% if item.enabled == false %}{% continue %}{% endif %}
           <li class="menu-item-{{ item.name | downcase }}{% if item.url == page.url %} active {% endif %}">
             <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
           </li>
