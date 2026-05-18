@@ -3,19 +3,51 @@ layout: default
 body_classes: page-work
 ---
 
+{%- comment -%}
+  Work-sample pages opt into the polished "sample-intro" treatment by adding
+  `sales_page_url` and/or `metrics` to their frontmatter. Pages without those
+  fields (Abandon Journeys, Nicus, Patriot, etc.) render exactly as before.
+{%- endcomment -%}
+{%- assign use_sample_style = false -%}
+{%- if page.sales_page_url or page.metrics -%}
+  {%- assign use_sample_style = true -%}
+{%- endif -%}
+
 <div class="section">
   <div class="container">
     <div class="row justify-content-center align-items-center">
       <div class="col-12 col-md-10 ">
-        <div class="intro">
+        <div class="intro{% if use_sample_style %} work-sample-intro{% endif %}">
           {% if page.image %}
-          <img width="1280" height="720" alt="{{ page.heading }}" class="img-fluid" src="{{ page.image | relative_url }}"/>
+          <img width="1280" height="720" alt="{{ page.heading }}" class="img-fluid{% if use_sample_style %} work-sample-hero{% endif %}" src="{{ page.image | relative_url }}"/>
           {% endif %}
           {% if page.title %}
           <h1>{{ page.title }}</h1>
           {% endif %}
           {% if page.description %}
           <p>{{ page.description }}</p>
+          {% endif %}
+
+          {% if use_sample_style and page.metrics %}
+          <ul class="work-sample-metrics">
+            {% for m in page.metrics %}
+              <li>
+                {% if m.value or m.label %}
+                  <span class="work-sample-metric-value">{{ m.value }}</span>
+                  <span class="work-sample-metric-label">{{ m.label }}</span>
+                {% else %}
+                  <span class="work-sample-metric-value">{{ m }}</span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+          {% if use_sample_style and page.sales_page_url %}
+          <a class="work-sample-sales-cta" href="{{ page.sales_page_url }}" target="_blank" rel="noopener">
+            {{ page.sales_page_label | default: "See the Front End Sales Page" }}
+            <span aria-hidden="true">↗</span>
+          </a>
           {% endif %}
         </div>
       </div>
@@ -24,11 +56,33 @@ body_classes: page-work
 </div>
 
 {% if page.content and page.content != "" %}
+{%- comment -%}
+  When using the new sample style, drop the legacy -150px overlap (which
+  was causing the two body H1s to collide with the description) in favour
+  of a clean gap, and inject the "Some of my best internal emails…" subhead
+  so individual pages no longer need to write it as a markdown H1.
+{%- endcomment -%}
+{%- comment -%}
+  Section padding is 60px top + 60px bottom around each `.section`, so the
+  effective gap between the CTA pill and the subhead is `120px + offset`.
+  A small negative offset pulls the subhead up to ~40px below the CTA —
+  close enough to read as a single flow without overlapping.
+{%- endcomment -%}
+{%- if use_sample_style -%}
+  {%- assign content_offset = page.intro_offset | default: '-80px' -%}
+{%- else -%}
+  {%- assign content_offset = page.intro_offset | default: '-150px' -%}
+{%- endif -%}
 <div class="section">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-lg-8">
-        <div class="content" style="margin-top: {{ page.intro_offset | default: '-150px' }}; text-align: center;">{{ content }}</div>
+        <div class="content" style="margin-top: {{ content_offset }}; text-align: center;">
+          {% if use_sample_style and page.samples_heading != false %}
+          <h2 class="work-sample-subhead">{{ page.samples_heading | default: "Some of my best internal emails for this offer" }}</h2>
+          {% endif %}
+          {{ content }}
+        </div>
       </div>
     </div>
   </div>

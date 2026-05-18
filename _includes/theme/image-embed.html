@@ -9,25 +9,27 @@
 
 <style>
   .image-embed-wrapper {
+    /* Occupy exactly 50% of the viewport at every breakpoint, centered
+       horizontally on the page. The position/transform trick lets us
+       break out of the narrower text column (col-lg-8) so the wrapper
+       can be wider than its parent without shifting off-center. */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
     display: block;
-    text-align: center !important;
-    margin: 0 auto 32px;
-    width: 100%;
+    width: 50vw;
+    margin: 0 0 32px;
+    padding: 15px;
     background: #ffffff;
     border: 1px solid #e2e2e2;
     border-radius: 10px;
-    padding: 24px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   }
-  /* On lg+ screens, let image embeds extend beyond the text column so
-     screenshots display at closer-to-native resolution. */
-  @media (min-width: 992px) {
-    .image-embed-wrapper {
-      width: calc(100% + 240px);
-      margin-left: -120px;
-      margin-right: -120px;
-      max-width: 1100px;
-    }
+  .image-embed-open-btn-row {
+    /* Center the "Open Image In New Tab" CTA above the screenshot. */
+    text-align: center;
+    margin-bottom: 12px;
   }
   a.image-embed-open-btn,
   a.image-embed-open-btn:link,
@@ -37,14 +39,13 @@
   a.image-embed-open-btn:focus {
     display: inline-block;
     padding: 10px 24px;
-    background: #114c29 !important;
+    background: #9e4a2b !important;
     color: #ffffff !important;
     border-radius: 999px;
     text-decoration: none !important;
     font-weight: 600;
     font-size: 0.95rem;
     line-height: 1.4;
-    margin-bottom: 2px;
     transition: filter 0.15s ease, transform 0.15s ease;
   }
   a.image-embed-open-btn:hover,
@@ -53,19 +54,22 @@
     transform: translateY(-1px);
   }
   .image-embed-img {
-    display: inline-block;
-    max-width: 100%;
+    /* Fill the wrapper's content area (50vw minus 15px padding on each
+       side) and stay centered via auto margins. */
+    display: block;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     border-radius: 6px;
-    vertical-align: top;
     image-rendering: -webkit-optimize-contrast;
   }
 </style>
 
 <div class="image-embed-wrapper">
-  <a href="{{ src | relative_url }}" target="_blank" rel="noopener" class="image-embed-open-btn">
-    Open Image In New Tab ↗
-  </a>
+  <div class="image-embed-open-btn-row">
+    <a href="{{ src | relative_url }}" target="_blank" rel="noopener" class="image-embed-open-btn">
+      Open Image In New Tab ↗
+    </a>
+  </div>
   <img class="image-embed-img" src="{{ src | relative_url }}" alt="{{ alt }}" loading="lazy" />
 </div>

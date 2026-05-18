@@ -24,7 +24,7 @@ intro_offset: "-75px"
   .abandon-journeys .aj-toc strong {
     display: block;
     margin-bottom: 8px;
-    color: #114c29;
+    color: #9e4a2b;
   }
   .abandon-journeys .aj-toc ul {
     margin: 0;
@@ -33,7 +33,7 @@ intro_offset: "-75px"
   .abandon-journeys .aj-toc li { margin: 4px 0; }
   .abandon-journeys .aj-section { margin: 0 0 36px; }
   .abandon-journeys .aj-section h2 {
-    color: #114c29;
+    color: #9e4a2b;
     font-size: 1.5rem;
     margin: 32px 0 4px;
   }
@@ -50,8 +50,8 @@ intro_offset: "-75px"
     background: #ffffff;
   }
   .abandon-journeys details.aj-email[open] {
-    border-color: #46e385;
-    box-shadow: 0 1px 3px rgba(70, 227, 133, 0.15);
+    border-color: #d4a744;
+    box-shadow: 0 1px 3px rgba(108, 201, 184, 0.15);
   }
   .abandon-journeys details.aj-email summary {
     cursor: pointer;
@@ -61,7 +61,7 @@ intro_offset: "-75px"
   .abandon-journeys details.aj-email summary::-webkit-details-marker { display: none; }
   .abandon-journeys details.aj-email summary::before {
     content: "\25B8";
-    color: #46e385;
+    color: #d4a744;
     margin-right: 6px;
     font-size: 0.9rem;
   }
@@ -98,13 +98,13 @@ intro_offset: "-75px"
   }
   .abandon-journeys .aj-email-body p { margin: 0 0 12px; }
   .abandon-journeys .aj-link {
-    color: #114c29;
+    color: #9e4a2b;
     text-decoration: underline;
     cursor: pointer;
     transition: color 0.15s ease;
   }
   .abandon-journeys .aj-link:hover {
-    color: #46e385;
+    color: #d4a744;
   }
   .abandon-journeys .aj-email-body ul {
     margin: 12px 0;

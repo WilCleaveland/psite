@@ -54,6 +54,18 @@ body_classes: page-home
             {% endfor %}
           </div>
           {% endif %}
+
+          {% if page.lead.videos %}
+          <div class="home-video-stack">
+            {% for v in page.lead.videos %}
+            <div class="home-video">
+              <div class="ratio ratio-16x9">
+                {{ v.iframe }}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
       </div>
     </div>

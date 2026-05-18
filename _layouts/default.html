@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
@@ -28,7 +28,12 @@
   </head>
 <body class="page {% if page.body_classes %}{{ page.body_classes }}{% elsif layout.body_classes %}{{ layout.body_classes }}{% endif %}{% if site.header.fixed %} has-fixed-header{% else %} has-static-header{% endif %}">
 
-{% include framework/menu-main-mobile.html %}
+{%- comment -%}
+  The new global header (framework/header.html) renders a jump-nav pill bar
+  that already wraps responsively on mobile, so we no longer need the
+  separate menu-main-mobile.html overlay or the hamburger trigger that
+  toggled it. Both have been removed from this layout.
+{%- endcomment -%}
 {% include framework/header.html %}
 
 <div id="wrapper" class="wrapper">     
@@ -47,7 +52,9 @@
   <script type="text/javascript" src="{{ '/assets/js/header.js' | relative_url }}"></script>
 {% endif %}
 <script type="text/javascript" src="{{ '/assets/js/hamburger.js' | relative_url }}"></script>
-<script type="text/javascript" src="{{ '/assets/js/darkModeSwitch.js' | relative_url }}"></script>
+{% if site.darkmode.enable_dark_mode != false %}
+  <script type="text/javascript" src="{{ '/assets/js/darkModeSwitch.js' | relative_url }}"></script>
+{% endif %}
 
 {% include framework/google-analytics.html %}
 {% include framework/plausible-analytics.html %}

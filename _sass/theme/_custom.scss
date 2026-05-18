@@ -108,13 +108,14 @@
   outline: none;
   margin: 0;
   padding: 14px 32px;
-  background-color: #000;
+  background-color: #9e4a2b;
   box-shadow: rgba(23, 22, 22, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   color: #fff;
   display: flex;
   align-items: center;
   &:hover {
     color: #fff;
+    background-color: #7a3920;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     text-decoration: none;
   }
@@ -124,7 +125,7 @@
     display: inline-block;
     margin: 0;
     margin-right: 6px;
-    color: #46e385;
+    color: #d4a744;
   }
   .status-text {
     display: inline-block;
@@ -242,12 +243,507 @@
   }
 }
 
-// Tighten consecutive H1s in work sample bodies so two stacked
-// markdown headings (e.g. "See the Front End Sales Page Here"
-// followed by "Some of my best internal emails…") read as a single
-// tight block instead of two separated headings.
+// Two video testimonials on the homepage: side-by-side on desktop, stacked
+// on mobile. Grid keeps the columns mathematically equal regardless of the
+// embedded player's intrinsic sizing.
+.home-video-stack {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
+  // Solid white wrapper unifies videos that have baked-in white sidebars
+  // with ones that have transparent letterbox bars — both read as identical
+  // white-framed tiles on the beige page background.
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(63, 45, 20, 0.10);
+
+  .ratio,
+  iframe,
+  .ratio iframe {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+  .ratio::before { display: none !important; }
+}
+@media (max-width: 575px) {
+  .home-video-stack {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+}
+
+// Tighten consecutive H1s in work sample bodies. Still useful as a
+// safety net for legacy pages that haven't migrated to the new
+// frontmatter-driven sample-intro pattern (sales_page_url + metrics).
 .page-work .content {
   h1 + h1 {
     margin-top: 0;
   }
 }
+
+// --------------------------------------------------------------------------
+// WORK-SAMPLE INTRO (Sicuro Brands etc.)
+// Opt-in via frontmatter: `sales_page_url` and/or `metrics`. Renders a
+// framed hero, prose description, stat-card row, terracotta CTA pill,
+// and a subhead above the screenshot grid — replacing the prior pattern
+// where stats were stuffed into `description` and two huge markdown H1s
+// crowded the top of the body.
+// --------------------------------------------------------------------------
+.intro.work-sample-intro {
+  // Framed hero — rounded corners + warm-tinted lift, capped width so it
+  // doesn't span the full col-md-10 (which felt billboard-y at desktop).
+  .work-sample-hero {
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    border-radius: 18px;
+    margin-bottom: 28px;
+    box-shadow:
+      0 12px 32px -12px rgba(63, 45, 20, 0.28),
+      0 3px 8px rgba(63, 45, 20, 0.08);
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  // Description: clean prose, no inline `<br>` clutter. Overrides the
+  // wider `.intro p` rule earlier in this file via class specificity.
+  p {
+    font-size: 20px;
+    line-height: 1.45;
+    color: var(--color-base-text-2);
+    max-width: 680px;
+    margin: 0 auto 24px;
+  }
+
+  // Stat row — three (or however many) small cards. Value reads big and
+  // terracotta; label reads small and muted underneath.
+  .work-sample-metrics {
+    list-style: none;
+    padding: 0;
+    margin: 4px auto 28px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 820px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 150px;
+      padding: 14px 22px;
+      background: var(--color-base-bg-2);
+      border: 1px solid var(--color-base-bg-3);
+      border-radius: 14px;
+      box-shadow: 0 1px 2px rgba(63, 45, 20, 0.04);
+      line-height: 1.2;
+    }
+  }
+  .work-sample-metric-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-primary-text);
+    letter-spacing: -0.01em;
+  }
+  .work-sample-metric-label {
+    margin-top: 4px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-base-text-3);
+    text-align: center;
+    text-transform: none;
+    line-height: 1.3;
+  }
+
+  // Sales-page CTA pill — promoted from a markdown H1 link to the same
+  // terracotta pill language used by the jump-nav's Book-a-Call button.
+  .work-sample-sales-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: var(--color-primary-text);
+    color: #ffffff !important;
+    border: 1px solid var(--color-primary-text);
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.3;
+    text-decoration: none !important;
+    box-shadow: 0 4px 12px rgba(63, 45, 20, 0.20);
+    transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover,
+    &:focus {
+      background: #7a3920;
+      border-color: #7a3920;
+      color: #ffffff !important;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(63, 45, 20, 0.28);
+    }
+  }
+}
+
+// Subhead above the screenshot grid — replaces the legacy "Some of my best
+// internal emails for this offer with stats..." markdown H1 in the body.
+.page-work .work-sample-subhead {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-primary-text);
+  text-align: center;
+  margin: 0 0 28px;
+}
+
+@media (max-width: 768px) {
+  .intro.work-sample-intro {
+    h1 { font-size: 30px; }
+    p  { font-size: 17px; }
+
+    .work-sample-metrics li { min-width: 130px; padding: 12px 16px; }
+    .work-sample-metric-value { font-size: 1.35rem; }
+  }
+  .page-work .work-sample-subhead { font-size: 22px; }
+}
+
+// Shared testimonial card styling — used on /testimonials/ (and any other
+// page that wraps a quote in `.testimonial-card`). Pull-quote feel with
+// a layered warm-tinted drop shadow that lifts off the mocha-latte beige.
+.testimonial-card {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto 20px;
+  padding: 36px 40px 32px;
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: var(--color-base-text);
+  background: var(--color-base-bg-2);
+  border: 1px solid var(--color-base-bg-3);
+  border-radius: 16px;
+  box-shadow:
+    0 1px 2px rgba(63, 45, 20, 0.05),
+    0 12px 28px -8px rgba(63, 45, 20, 0.14),
+    0 6px 14px -4px rgba(63, 45, 20, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 1px 2px rgba(63, 45, 20, 0.05),
+      0 22px 44px -10px rgba(63, 45, 20, 0.20),
+      0 10px 20px -6px rgba(63, 45, 20, 0.10);
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -8px;
+    left: 22px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 110px;
+    line-height: 1;
+    color: var(--color-primary-text);
+    opacity: 0.14;
+    pointer-events: none;
+  }
+
+  p {
+    margin-bottom: 14px;
+    color: var(--color-base-text);
+  }
+  p:last-of-type { margin-bottom: 0; }
+  strong {
+    color: var(--color-primary-text);
+    font-weight: 700;
+  }
+  a {
+    color: var(--color-primary-text);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    &:hover { text-decoration-thickness: 2px; }
+  }
+
+  .tc-byline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 22px;
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--color-primary-text);
+  }
+  .tc-byline img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid var(--color-base-bg);
+    box-shadow: 0 2px 6px rgba(63, 45, 20, 0.15);
+    margin: 0;
+    flex: 0 0 auto;
+  }
+  .tc-byline-text { line-height: 1.3; }
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 28px 22px 24px;
+    font-size: 1.08rem;
+  }
+  .testimonial-card::before {
+    font-size: 84px;
+    left: 14px;
+    top: -4px;
+  }
+}
+
+// --------------------------------------------------------------------------
+// GLOBAL UPWORK-VOICE RULES
+// Promote the visual language from /upwork/ to the rest of the site so every
+// page reads with the same rhythm and accent treatment.
+// --------------------------------------------------------------------------
+
+// Section dividers: a hairline terracotta-tinted rule between stacked
+// `.section` blocks (mirrors `.upwork-section + .upwork-section`). Skip
+// dividers when the next section uses a tinted background — the colour
+// change is the divider in that case.
+//
+// `body:not(.page-work)` excludes work-sample pages where the content
+// section uses `margin-top: -150px` to overlap the hero; without this
+// exclusion the divider line slices horizontally through the markdown
+// body around the 1000px scroll mark.
+body:not(.page-work) .section + .section:not(.section-base-bg-2):not(.section-base-bg-3) {
+  border-top: 1px solid var(--color-base-bg-3);
+}
+
+// Section headings — picked up by the framework's `.section-heading` block
+// and by any standalone `.section-title` element. Matches the upwork
+// `h2.upwork-section-title` treatment: centred, weight 600, terracotta,
+// 32px desktop / 26px mobile.
+.section-heading h2,
+h2.section-title,
+.section-title > h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color-primary-text);
+  text-align: center;
+  margin: 0 0 36px;
+  line-height: 1.2;
+}
+@media (max-width: 768px) {
+  .section-heading h2,
+  h2.section-title,
+  .section-title > h2 {
+    font-size: 26px;
+  }
+}
+
+// Shared filter-chip styling for any work / collection / category filter.
+// Replaces the inline CSS that previously lived in work-overview.html and
+// duplicated in `.uw-filter`. Apply by giving the wrapper one of these
+// class names and putting `<button data-filter="…">` inside.
+.work-filter,
+.uw-filter,
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 0 auto 32px;
+  max-width: 900px;
+
+  button {
+    padding: 6px 14px;
+    border: 1px solid var(--color-base-bg-3);
+    background: transparent;
+    color: inherit;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+
+    &:hover { border-color: var(--color-primary-bg); }
+    &.active {
+      background: var(--color-primary-bg);
+      border-color: var(--color-primary-bg);
+      color: var(--color-primary-text);
+      font-weight: 600;
+    }
+  }
+}
+
+// Tighten the .intro paragraph treatment so home and basic-layout heroes
+// match the upwork hero rhythm — 22px description, terracotta-friendly
+// secondary text colour, breathing room beneath.
+.intro {
+  p {
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 28px;
+  }
+  // Keep the avatar above the headline pinned tighter to it, matching
+  // the upwork hero spacing.
+  .avatar { margin-bottom: 20px; }
+}
+
+// Any standalone video embed that uses the standard Bootstrap `.ratio`
+// helper outside the home / upwork stacks (e.g. inline in a work page)
+// gets the same white-card frame so single-video pages stay coherent
+// with the multi-video stacks.
+.content > .ratio,
+.content > p > .ratio {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(63, 45, 20, 0.10);
+}
+
+// Shared jump-nav styling — used by both the homepage's in-page jump nav
+// (.upwork-jump-nav, rendered as part of page content) and the global
+// header on every non-home page (.site-jump-nav, rendered by
+// _includes/framework/header.html). Single source of truth: centred sticky
+// row of terracotta pill chips. The trailing `Book a Call` entry uses
+// .site-jump-item-cta for a filled-terracotta conversion pill.
+.upwork-jump-nav,
+.site-jump-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-base-bg);
+  border-top: 1px solid var(--color-base-bg-3);
+  border-bottom: 1px solid var(--color-base-bg-3);
+  padding: 14px 0;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.upwork-jump-nav a.upwork-jump-item,
+.site-jump-nav a.site-jump-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  background: var(--color-base-bg-2);
+  color: var(--color-primary-text) !important;
+  border: 1px solid var(--color-base-bg-3);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+
+  &:hover,
+  &:focus {
+    background: var(--color-primary-text);
+    border-color: var(--color-primary-text);
+    color: #ffffff !important;
+  }
+}
+
+// Filled-terracotta CTA variant for "Book a Call" pills — used both by the
+// trailing pill in the global header (.site-jump-item-cta) and by the
+// dynamic Book-a-Call pill on the homepage's in-page jump nav
+// (.upwork-jump-item-cta, which fades in after the hero CTA scrolls out of
+// view; see the IntersectionObserver in pages/home.md).
+.upwork-jump-nav a.upwork-jump-item-cta,
+.site-jump-nav a.site-jump-item-cta {
+  background: var(--color-primary-text);
+  color: #ffffff !important;
+  border-color: var(--color-primary-text);
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(63, 45, 20, 0.20);
+
+  &::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-primary-bg);
+    flex: 0 0 auto;
+    box-shadow: 0 0 0 3px rgba(212, 167, 68, 0.25);
+  }
+
+  &:hover,
+  &:focus {
+    background: #7a3920;
+    border-color: #7a3920;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(63, 45, 20, 0.28);
+  }
+}
+
+// Work-sample filter fade. When a user clicks a filter chip the JS adds
+// `.is-filtering` to the grid for ~200ms while it (1) applies the new
+// .hidden state and (2) randomises CSS `order` on the still-visible
+// cards. This gives a clear "something happened" visual when the matching
+// subset already occupies the top rows.
+.uw-card-wrapper,
+.work-card-wrapper {
+  transition: opacity 0.2s ease;
+}
+.is-filtering .uw-card-wrapper:not(.hidden),
+.is-filtering .work-card-wrapper:not(.hidden) {
+  opacity: 0;
+}
+
+// Hidden-by-default state for the homepage jump nav's Book a Call pill.
+// JS toggles `.is-revealed` on the parent .upwork-jump-nav once the hero's
+// .upwork-cta scrolls past the viewport top, fading the pill in from the
+// right so the entrance feels intentional rather than abrupt.
+.upwork-jump-nav .upwork-jump-cta-reveal {
+  display: none;
+}
+.upwork-jump-nav.is-revealed .upwork-jump-cta-reveal {
+  display: inline-flex;
+  animation: ujnCtaReveal 0.28s ease both;
+}
+@keyframes ujnCtaReveal {
+  from { opacity: 0; transform: translateX(8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 575px) {
+  .upwork-jump-nav,
+  .site-jump-nav {
+    padding: 10px 0;
+
+    .container { gap: 6px; }
+  }
+
+  .upwork-jump-nav a.upwork-jump-item,
+  .site-jump-nav a.site-jump-item {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+

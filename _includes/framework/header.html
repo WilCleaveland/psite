@@ -1,14 +1,19 @@
-{% capture header_classes %}
-  {% if site.header.align %}header-{{ site.header.align}} {% endif %}{% if site.header.fixed %}header-fixed {% endif %}{% if page.header_transparent %}header-transparent {% endif %}{{ page.header_classes }}
-{% endcapture %}
-
-<div id="header" class='header {{ header_classes | strip }}'>
+<!-- Global site header — renders the same jump-nav pill bar as the homepage
+     so every non-home page (work samples, /work/, /testimonials/, /ebook/,
+     etc.) shares the same look and funnels visitors back to the relevant
+     section of the new homepage. The homepage itself uses _layouts/upwork.html
+     which renders its own .upwork-jump-nav inline and skips this partial.
+     Pills are driven by _data/menu.yml; an entry with `button: true` renders
+     as the filled terracotta CTA. -->
+<nav class="site-jump-nav" id="header">
   <div class="container">
-    {% include framework/logo.html %}
-    {% include framework/menu-main.html %}
-    {% if site.darkmode.enable_dark_mode and site.darkmode.show_dark_mode_toggle_in_header %}
-      {% include framework/dark-mode-switcher.html %}
-    {% endif %}
-    {% include framework/hamburger.html %}
+    {% for item in site.data.menu.main %}
+      {% if item.enabled == false %}{% continue %}{% endif %}
+      <a href="{% if item.external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"
+         class="site-jump-item{% if item.button %} site-jump-item-cta{% endif %}"
+         {% if item.external %}target="_blank" rel="noopener"{% endif %}>
+        {{ item.name }}
+      </a>
+    {% endfor %}
   </div>
-</div>
+</nav>

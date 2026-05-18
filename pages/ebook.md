@@ -6,7 +6,7 @@ permalink: "/ebook/"
 description: ""
 image: 
 align: "center"
-show_form: false # flip to true to show the email opt-in form instead of direct download
+show_form: true # flip to false to swap the email opt-in for a direct download link
 ebook_url: "/assets/5-lessons-from-5-m-in-email-revenue.pdf" # path to the ebook file
 ---
 <img src="{{ site.url }}{{ site.baseurl }}/images/ebook.png" width="50%" style="margin-top:-100px; margin-bottom:-50px; display: block; margin-left: auto; margin-right: auto;"> 
@@ -17,7 +17,7 @@ ebook_url: "/assets/5-lessons-from-5-m-in-email-revenue.pdf" # path to the ebook
 {% else %}
 <div style="text-align: center; margin-top: 90px;">
   <a href="{{ page.ebook_url | relative_url }}" target="_blank" rel="noopener"
-     style="display: inline-block; padding: 14px 32px; background: #114c29; color: #ffffff !important;
+     style="display: inline-block; padding: 14px 32px; background: #9e4a2b; color: #ffffff !important;
             border-radius: 999px; text-decoration: none !important; font-weight: 600; font-size: 1.05rem;
             transition: filter 0.15s ease, transform 0.15s ease;">
     Open the Free Email Copy Guide ↗

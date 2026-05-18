@@ -33,38 +33,12 @@ body_classes: page-work-overview
 {% assign all_cats = all_cats | sort %}
 
 <style>
-  .work-filter {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    margin: 0 auto 32px;
-    max-width: 900px;
-  }
-  .work-filter button {
-    padding: 6px 14px;
-    border: 1px solid #d8d8d8;
-    background: transparent;
-    color: inherit;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    cursor: pointer;
-    transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
-  }
-  .work-filter button:hover {
-    border-color: #46e385;
-  }
-  .work-filter button.active {
-    background: #46e385;
-    border-color: #46e385;
-    color: #114c29;
-    font-weight: 600;
-  }
+  /* .work-filter chip styling moved to _sass/theme/_custom.scss so any page
+     can reuse it. Only the grid-specific helpers stay here. */
   .work-card-wrapper.hidden { display: none; }
   .work-empty-state {
     text-align: center;
-    color: #848484;
+    color: var(--color-base-text-2);
     padding: 24px 0 8px;
     display: none;
   }
@@ -114,22 +88,50 @@ body_classes: page-work-overview
 <script>
   (function () {
     const filterContainer = document.getElementById('work-filter');
+    const grid = document.getElementById('work-grid');
     const cards = document.querySelectorAll('.work-card-wrapper');
     const emptyState = document.getElementById('work-empty-state');
     if (!filterContainer || !cards.length) return;
 
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+      }
+      return arr;
+    }
+
     function applyFilter(filter) {
-      let visibleCount = 0;
-      cards.forEach((card) => {
-        const cats = (card.getAttribute('data-categories') || '').split(' ').filter(Boolean);
-        const show = filter === 'all' || cats.indexOf(filter) !== -1;
-        card.classList.toggle('hidden', !show);
-        if (show) visibleCount++;
-      });
+      // Update active chip immediately for tactile feel.
       filterContainer.querySelectorAll('button').forEach((b) => {
         b.classList.toggle('active', b.getAttribute('data-filter') === filter);
       });
-      if (emptyState) emptyState.classList.toggle('visible', visibleCount === 0);
+
+      // Fade currently-visible cards, then swap hidden state + shuffle
+      // CSS order on the new visible set, then fade back. Gives a clear
+      // visual confirmation that filtering happened even when the matching
+      // subset already occupies the top rows.
+      if (grid) grid.classList.add('is-filtering');
+
+      setTimeout(() => {
+        const visible = [];
+        cards.forEach((card) => {
+          const cats = (card.getAttribute('data-categories') || '').split(' ').filter(Boolean);
+          const show = filter === 'all' || cats.indexOf(filter) !== -1;
+          card.classList.toggle('hidden', !show);
+          if (show) visible.push(card);
+        });
+        shuffle(visible);
+        cards.forEach((card) => {
+          const idx = visible.indexOf(card);
+          card.style.order = idx >= 0 ? idx : '';
+        });
+        if (emptyState) emptyState.classList.toggle('visible', visible.length === 0);
+
+        requestAnimationFrame(() => {
+          if (grid) grid.classList.remove('is-filtering');
+        });
+      }, 200);
     }
 
     const validFilters = Array.from(filterContainer.querySelectorAll('button'))

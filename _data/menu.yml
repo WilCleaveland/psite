@@ -1,29 +1,27 @@
 main:
-  - name: Work
-    url: /work/
+  - name: About
+    url: /#about
     weight: 1
-    child:
-      - name: All Work
-        url: /work/
-      - name: Sicuro Brands
-        url: /sicuro/
-      - name: Nicus Software
-        url: /nicus-software/
-      - name: Patriot Training Center
-        url: /patriot-training-center/
-      - name: Automations
-        url: /work/Abandon%20Cart%20Journeys%20(Sicuro)/ # currently the only Automations sample; revert to /automations/ once there's more than one
-  - name: Resume
-    url: /resume/
+  - name: Work Samples
+    url: /#work
     weight: 2
   - name: Testimonials
-    url: /testimonials/
+    url: /#testimonials
     weight: 3
-  - name: Free Email Copy Guide
-    url: /ebook/
+  - name: Resume
+    url: /#resume
     weight: 4
+  - name: Free Guide
+    url: /#ebook
+    weight: 5
   - name: LinkedIn
     url: "https://www.linkedin.com/in/wilcleaveland/"
-    target: "_blank"
-    weight: 5
-    enabled: false # flip to true to show in nav
+    external: true
+    weight: 6
+    enabled: true # flip to false to hide from nav
+  - name: Book a Call
+    url: "https://calendly.com/wccleaveland"
+    external: true
+    button: true # renders as a terracotta filled pill (the CTA), see _custom.scss
+    weight: 7
+    enabled: true

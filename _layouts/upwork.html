@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    {% if page.noindex %}
+    <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+
+    {% include framework/seo-meta-tags.html %}
+    {% include framework/og-meta-tags.html %}
+    {% include framework/favicon.html %}
+
+    <link href="{{ '/assets/css/main.css' | relative_url }}" rel="stylesheet">
+
+    {% include framework/fonts.html %}
+
+    <style>
+      html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+      .upwork-hero { padding: 40px 0 40px; text-align: center; }
+      .upwork-hero .avatar { border-radius: 50%; margin-bottom: 20px; }
+      .upwork-hero h1 { font-size: 44px; font-weight: 600; line-height: 1.1; margin-bottom: 20px; color: #2f2e2a; }
+      .upwork-hero .intro-copy { font-size: 22px; font-weight: 300; color: #535247; line-height: 1.4; margin-bottom: 28px; }
+      .upwork-hero .upwork-cta { margin: 0 0 32px; display: flex; justify-content: center; }
+      .upwork-hero .upwork-cta .status {
+        display: inline-flex; align-items: center; gap: 6px;
+        padding: 14px 32px;
+        background-color: #9e4a2b;
+        color: #fff !important;
+        border-radius: 999px;
+        font-weight: 500;
+        letter-spacing: 0.025em;
+        text-decoration: none !important;
+        box-shadow: rgba(23, 22, 22, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        transition: all 0.15s ease;
+      }
+      .upwork-hero .upwork-cta .status:hover {
+        background-color: #7a3920;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+      }
+      .upwork-hero .upwork-cta .status-light { width: 12px; height: 12px; }
+      .upwork-hero .video-stack {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+        max-width: 720px; margin: 0 auto;
+      }
+      .upwork-hero .video-stack-item {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-radius: 10px;
+        /* Solid white wrapper unifies the two videos: the left embed has
+           white sidebars baked in, the right embed has transparent ones —
+           on white both read as identical white-framed video tiles. */
+        background: #ffffff;
+        box-shadow: 0 2px 10px rgba(63, 45, 20, 0.10);
+      }
+      .upwork-hero .video-stack-item iframe,
+      .upwork-hero .video-stack-item .ratio,
+      .upwork-hero .video-stack-item .ratio iframe {
+        position: absolute !important;
+        top: 0 !important; left: 0 !important;
+        width: 100% !important; height: 100% !important;
+        border: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+      }
+      /* Neutralize Bootstrap's .ratio padding hack inside the wrapper —
+         we control the aspect ratio at the wrapper level now. */
+      .upwork-hero .video-stack-item .ratio::before { display: none !important; }
+      @media (max-width: 575px) {
+        .upwork-hero .video-stack { grid-template-columns: 1fr; max-width: 420px; }
+      }
+
+      /* .upwork-jump-nav styling lives in _sass/theme/_custom.scss alongside
+         the global .site-jump-nav so the homepage's in-page nav and the
+         non-home global header share one source of truth. */
+
+      .upwork-section { padding: 60px 0; }
+      .upwork-section + .upwork-section { border-top: 1px solid var(--color-base-bg-3); }
+      .upwork-section h2.upwork-section-title {
+        font-size: 32px; font-weight: 600; color: #9e4a2b;
+        text-align: center; margin: 0 0 36px;
+      }
+
+      /* .uw-filter chip styling lives in _sass/theme/_custom.scss alongside
+         .work-filter and .filter-chips, so any page can reuse it. */
+      .uw-card-wrapper.hidden { display: none; }
+
+      /* Testimonials — left-aligned cards with layered drop shadow */
+      .upwork-testimonial {
+        position: relative;
+        max-width: 780px;
+        margin: 0 auto 20px;
+        padding: 36px 40px 32px;
+        text-align: left;
+        font-size: 1.2rem;
+        line-height: 1.65;
+        color: #2f2e2a;
+        background: var(--color-base-bg-2);
+        border: 1px solid var(--color-base-bg-3);
+        border-radius: 16px;
+        box-shadow:
+          0 1px 2px rgba(63, 45, 20, 0.05),
+          0 12px 28px -8px rgba(63, 45, 20, 0.14),
+          0 6px 14px -4px rgba(63, 45, 20, 0.06);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .upwork-testimonial:hover {
+        transform: translateY(-2px);
+        box-shadow:
+          0 1px 2px rgba(63, 45, 20, 0.05),
+          0 22px 44px -10px rgba(63, 45, 20, 0.20),
+          0 10px 20px -6px rgba(63, 45, 20, 0.10);
+      }
+      .upwork-testimonial::before {
+        content: "\201C";
+        position: absolute;
+        top: -8px;
+        left: 22px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 110px;
+        line-height: 1;
+        color: #9e4a2b;
+        opacity: 0.14;
+        pointer-events: none;
+      }
+      .upwork-testimonial p {
+        margin-bottom: 14px;
+        color: #2f2e2a;
+      }
+      .upwork-testimonial p:last-of-type { margin-bottom: 0; }
+      .upwork-testimonial strong {
+        color: #9e4a2b;
+        font-weight: 700;
+      }
+      .upwork-testimonial img {
+        display: inline-block;
+        vertical-align: middle;
+        width: 54px;
+        height: 54px;
+        max-width: 54px;
+        border-radius: 50%;
+        margin: 22px 14px 0 0;
+        border: 2px solid var(--color-base-bg);
+        box-shadow: 0 2px 6px rgba(63, 45, 20, 0.15);
+      }
+      .upwork-testimonial .source {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 22px 0 0 0;
+        font-weight: 600;
+        font-size: 1.02rem;
+        color: #9e4a2b;
+      }
+      .upwork-testimonial .source a {
+        color: #9e4a2b;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        text-decoration-thickness: 1px;
+        transition: text-decoration-thickness 0.15s ease;
+      }
+      .upwork-testimonial .source a:hover {
+        text-decoration-thickness: 2px;
+      }
+      .upwork-testimonial-divider { display: none; }
+
+      /* Resume iframe */
+      .upwork-resume-frame {
+        width: 100%; max-width: 900px; height: 1100px;
+        border: 1px solid var(--color-base-bg-3); border-radius: 8px;
+        display: block; margin: 0 auto;
+      }
+
+      @media (max-width: 768px) {
+        .upwork-hero h1 { font-size: 32px; }
+        .upwork-hero .intro-copy { font-size: 18px; }
+        .upwork-section h2.upwork-section-title { font-size: 26px; }
+        .upwork-testimonial { padding: 28px 22px 24px; font-size: 1.08rem; }
+        .upwork-testimonial::before { font-size: 84px; left: 14px; top: -4px; }
+        .upwork-resume-frame { height: 700px; }
+      }
+    </style>
+  </head>
+<body class="page page-upwork">
+
+<div id="wrapper" class="wrapper">
+  {{ content }}
+</div>
+
+<script type="text/javascript" src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
+
+</body>
+</html>
