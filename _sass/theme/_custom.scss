@@ -720,10 +720,16 @@ h2.section-title,
 // JS toggles `.is-revealed` on the parent .upwork-jump-nav once the hero's
 // .upwork-cta scrolls past the viewport top, fading the pill in from the
 // right so the entrance feels intentional rather than abrupt.
-.upwork-jump-nav .upwork-jump-cta-reveal {
+//
+// NOTE: the `a` element selectors are required. The .upwork-jump-item rule
+// above is `.upwork-jump-nav a.upwork-jump-item { display: inline-flex }`,
+// which has higher specificity than a plain `.upwork-jump-nav .upwork-jump-cta-reveal`
+// — the pill would be permanently visible without matching that element
+// selector here.
+.upwork-jump-nav a.upwork-jump-cta-reveal {
   display: none;
 }
-.upwork-jump-nav.is-revealed .upwork-jump-cta-reveal {
+.upwork-jump-nav.is-revealed a.upwork-jump-cta-reveal {
   display: inline-flex;
   animation: ujnCtaReveal 0.28s ease both;
 }

@@ -4,7 +4,7 @@ description: "A collection of abandon-cart email sequences I wrote for Sicuro Br
 date: 2025-03-15T10:00:00+10:00
 categories: ["Sicuro Brands", "Email", "Automations", "Abandon Journeys"]
 icon: "assets/images/icons/icons8-signature-50.png"
-intro_offset: "-75px"
+intro_offset: "-105px"
 ---
 
 <style>
