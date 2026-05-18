@@ -108,6 +108,7 @@ noindex: true
       <img src="{{ '/images/nate.webp' | relative_url }}" alt="Nathan Hopkins">
       <p class="source">— Nathan Hopkins, <a href="https://sicurobrands.com/">Sicuro Brands</a></p>
     </div>
+    {% include theme/linkedin-recommendations.html show_divider=true offset=0 limit=2 %}
     <hr class="upwork-testimonial-divider">
 
     <div class="upwork-testimonial">
@@ -119,6 +120,7 @@ noindex: true
       <img src="{{ '/images/ryan_healy.jpg' | relative_url }}" alt="Ryan Healy">
       <p class="source">— Ryan Healy, <a href="https://upsender.com/">Upsender</a></p>
     </div>
+    {% include theme/linkedin-recommendations.html show_divider=true offset=2 limit=2 %}
     <hr class="upwork-testimonial-divider">
 
     <div class="upwork-testimonial">
@@ -132,6 +134,7 @@ noindex: true
       <img src="{{ '/images/lou_cozzolino.jpg' | relative_url }}" alt="Lou Cozzolino">
       <p class="source">— Lou Cozzolino, <a href="https://lonesurvivalist.com/">Lone Survivalist</a></p>
     </div>
+    {% include theme/linkedin-recommendations.html show_divider=true offset=4 limit=2 %}
     <hr class="upwork-testimonial-divider">
 
     <div class="upwork-testimonial">
@@ -139,6 +142,7 @@ noindex: true
       <img src="{{ '/images/drew_kossoff.jpg' | relative_url }}" alt="Drew Kossoff">
       <p class="source">— Drew Kossoff, <a href="https://rainmakeradventures.com/">Rainmaker Ad Ventures</a></p>
     </div>
+    {% include theme/linkedin-recommendations.html show_divider=true offset=6 limit=2 %}
     <hr class="upwork-testimonial-divider">
 
     <div class="upwork-testimonial">
@@ -148,6 +152,13 @@ noindex: true
       <img src="{{ '/images/ben_steuart.jpg' | relative_url }}" alt="Ben Steuart">
       <p class="source">— Ben Steuart, <a href="https://steuartsnatural.health/">Steuart's Natural Health</a></p>
     </div>
+    {%- comment -%}
+      LinkedIn recommendations are managed in _data/linkedin_recommendations.yml.
+      The first 8 are interleaved between the five hardcoded testimonials
+      above (2 + 2 + 2 + 2). This trailing include catches everything from
+      offset 8 onwards — currently 2 cards, plus any future additions.
+    {%- endcomment -%}
+    {% include theme/linkedin-recommendations.html show_divider=true offset=8 %}
   </div>
 </section>
 

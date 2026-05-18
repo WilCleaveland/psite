@@ -66,6 +66,8 @@ exclude:
   - README.md
   - LICENSE
   - netlify.toml
+  - linkedin-bookmarklet.md
+  - Balance Coffee Email Audit and Plan.docx
 
 
 # -------------------

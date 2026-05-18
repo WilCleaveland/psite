@@ -1,0 +1,87 @@
+{%- comment -%}
+  Render LinkedIn recommendations from _data/linkedin_recommendations.yml
+  as testimonial cards in the same visual language as the hand-coded
+  .upwork-testimonial cards on /, /upwork/, etc.
+
+  Usage:
+    {% include theme/linkedin-recommendations.html %}
+    {% include theme/linkedin-recommendations.html limit=3 %}
+    {% include theme/linkedin-recommendations.html offset=3 limit=3 %}
+    {% include theme/linkedin-recommendations.html show_divider=true %}
+
+  - `offset` (int)       — skip the first N entries (default: 0). Use with
+                           `limit` to render a slice of the data file in
+                           the middle of a page (e.g. between hardcoded
+                           testimonials, for interleaving).
+  - `limit` (int)        — render at most N entries (default: all remaining)
+  - `show_divider` (bool) — emit a <hr class="upwork-testimonial-divider">
+                           before the first LinkedIn card so it visually
+                           separates from a preceding hand-coded one
+{%- endcomment -%}
+
+{%- assign all_recs = site.data.linkedin_recommendations -%}
+{%- assign start = include.offset | default: 0 | plus: 0 -%}
+{%- assign total = all_recs | size -%}
+{%- if start >= total -%}
+  {%- assign recs = "" | split: "" -%}
+{%- else -%}
+  {%- assign remaining = total | minus: start -%}
+  {%- if include.limit -%}
+    {%- assign take = include.limit | plus: 0 -%}
+    {%- if take > remaining -%}{%- assign take = remaining -%}{%- endif -%}
+  {%- else -%}
+    {%- assign take = remaining -%}
+  {%- endif -%}
+  {%- assign recs = all_recs | slice: start, take -%}
+{%- endif -%}
+
+{%- if recs and recs.size > 0 -%}
+  {%- if include.show_divider -%}
+    <hr class="upwork-testimonial-divider">
+  {%- endif -%}
+  {%- for rec in recs -%}
+    {%- if rec.name -%}
+      {%- unless forloop.first -%}
+        <hr class="upwork-testimonial-divider">
+      {%- endunless -%}
+      <div class="upwork-testimonial linkedin-testimonial">
+        <a class="linkedin-badge"
+           href="{{ rec.profile_url | default: 'https://www.linkedin.com/in/wilcleaveland/details/recommendations/' }}"
+           target="_blank" rel="noopener"
+           aria-label="View {{ rec.name | escape }}'s recommendation on LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43c-1.14 0-2.07-.93-2.07-2.07s.93-2.07 2.07-2.07c1.14 0 2.06.93 2.06 2.07 0 1.14-.92 2.07-2.06 2.07zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/>
+          </svg>
+        </a>
+
+        {{ rec.text | strip | markdownify }}
+
+        <div class="linkedin-byline">
+          {%- if rec.photo -%}
+            <img src="{{ rec.photo | relative_url }}" alt="{{ rec.name | escape }}" loading="lazy">
+          {%- else -%}
+            {%- assign initial = rec.name | slice: 0, 1 | upcase -%}
+            <span class="linkedin-monogram" aria-hidden="true">{{ initial }}</span>
+          {%- endif -%}
+          <div class="linkedin-byline-text">
+            <p class="source">
+              {%- if rec.profile_url -%}
+                — <a href="{{ rec.profile_url }}" target="_blank" rel="noopener">{{ rec.name }}</a>
+              {%- else -%}
+                — {{ rec.name }}
+              {%- endif -%}
+              {%- if rec.headline -%}, {{ rec.headline }}{%- endif -%}
+            </p>
+            {%- if rec.relationship or rec.date -%}
+              <p class="linkedin-meta">
+                {%- if rec.relationship -%}{{ rec.relationship }}{%- endif -%}
+                {%- if rec.relationship and rec.date %} · {% endif -%}
+                {%- if rec.date -%}{{ rec.date }}{%- endif -%}
+              </p>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
