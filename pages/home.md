@@ -219,6 +219,24 @@ meta_title: "Wil Cleaveland — Marketer in Roanoke, VA"
       if (!btn) return;
       applyFilter(btn.getAttribute('data-filter'));
     });
+
+    // Deep-link support: a URL like /?filter=sicuro-brands#work lands on
+    // the homepage, jumps to the work section via the hash, and arrives
+    // with that filter pre-selected. We apply the filter synchronously
+    // (no 200ms fade) so the visitor never sees the unfiltered grid
+    // flash through before the filter takes effect.
+    const params = new URLSearchParams(window.location.search);
+    const initialFilter = params.get('filter');
+    if (initialFilter && validFilters.indexOf(initialFilter) !== -1) {
+      filterContainer.querySelectorAll('button').forEach((b) => {
+        b.classList.toggle('active', b.getAttribute('data-filter') === initialFilter);
+      });
+      cards.forEach((card) => {
+        const cats = (card.getAttribute('data-categories') || '').split(' ').filter(Boolean);
+        const show = initialFilter === 'all' || cats.indexOf(initialFilter) !== -1;
+        card.classList.toggle('hidden', !show);
+      });
+    }
   })();
 
   // Reveal the Book a Call pill in the jump nav as soon as the user has
