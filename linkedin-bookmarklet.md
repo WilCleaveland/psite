@@ -3,7 +3,10 @@
 This is an internal-only doc (excluded from Jekyll's build via `_config.yml`).
 The bookmarklet below scrapes the recommendations visible on **your own**
 LinkedIn `/details/recommendations/` page and outputs a YAML block you can
-paste into `_data/linkedin_recommendations.yml`.
+paste into `_data/testimonials.yml` (the single source of truth for all
+testimonials on the site). **For each pasted entry, add `source: linkedin`
+on its own line** — that flag is what triggers the LinkedIn-blue accent
+strip and corner badge on the rendered card.
 
 Because the script runs on a page you're already viewing (logged-in,
 authorized for your own data), it doesn't bypass any LinkedIn auth and
@@ -30,8 +33,11 @@ clicking → "View Source" and reading the markup yourself, just faster.
 5. You'll see an alert telling you how many recommendations were found.
    The YAML is copied to your clipboard (and also logged to the browser
    console — open with `Cmd+Opt+J` on Mac if you need to inspect).
-6. Open `_data/linkedin_recommendations.yml`, delete the `[]` (and any
-   prior harvested entries), and paste the YAML there.
+6. Open `_data/testimonials.yml` and paste the YAML into the place where
+   you want each new card to appear (order in the file == order on the
+   page). **For each pasted entry, add a `source: linkedin` line** —
+   without it, the card renders as a curated testimonial instead of a
+   LinkedIn one.
 7. Manually save headshots to `/images/linkedin/` if you want photos —
    right-click each recommender's photo on LinkedIn → "Save image as…" →
    save to `assets/images/linkedin/firstname-lastname.jpg`. Then add a

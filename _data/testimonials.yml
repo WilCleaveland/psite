@@ -1,0 +1,159 @@
+# Testimonials
+# -------------------------------------------------------------------------
+# Single source of truth for testimonials displayed on:
+#   - the homepage testimonials section          (pages/home.md)
+#   - the /upwork/ testimonials section          (pages/upwork.md)
+#   - the standalone /testimonials/ page         (pages/testimonials.md)
+#
+# Order on the page = order in this file. Reorder by moving entries up or
+# down. The render include (_includes/theme/testimonials.html) emits the
+# right markup for whichever page it's called from.
+#
+# Two flavors of entry:
+#
+#   1. CURATED testimonial — full byline (name + org + org_url + local
+#      headshot). Body text may use Markdown (e.g. **bold**) and should
+#      include literal "" quote marks if you want them rendered.
+#
+#       - name: "Recommender's full name"
+#         org: "Their company or org"            # optional
+#         org_url: "https://..."                 # optional
+#         photo: "/images/headshot.jpg"          # optional, local path
+#         text: |
+#           "Multi-paragraph quote text. Blank line for paragraph break."
+#
+#   2. LINKEDIN-sourced — flagged with `source: linkedin`. Renders with a
+#      LinkedIn-blue accent strip + corner badge so visitors can tell it's
+#      pulled from a real LinkedIn recommendation. The `name` field can be
+#      the LinkedIn-style "Name - Title, Company" combined string.
+#
+#       - name: "Name - Title, Company"
+#         source: linkedin                       # REQUIRED for LinkedIn styling
+#         profile_url: "https://www.linkedin.com/in/..."
+#         photo: "/images/linkedin/firstname_lastname.jpg"   # optional
+#         text: |
+#           Recommendation body. No leading "" needed; LinkedIn doesn't
+#           render them on the source so we don't either.
+#
+# Harvesting more LinkedIn entries: see ../linkedin-bookmarklet.md. The
+# bookmarklet's YAML output is a starting point — paste it here and add
+# `source: linkedin` to each entry before saving.
+# -------------------------------------------------------------------------
+
+- name: "Nathan Hopkins"
+  org: "Sicuro Brands"
+  org_url: "https://sicurobrands.com/"
+  photo: "/images/nate.webp"
+  text: |
+    "Wil has been very effective at maximizing revenue from our internal lists and generating winning funnel copy for all our brands — in both good times and bad.
+
+    In a niche where we're constantly facing challenges to consistently scale on cold traffic, **Wil's performance is one constant we've been extremely thankful to count on!**"
+
+- name: "John Clark — CEO, Nicus Software"
+  source: linkedin
+  profile_url: "https://www.linkedin.com/in/john-clark-nicus/"
+  photo: "/images/linkedin/john_clark.jpeg"
+  text: |
+    Marketing in the ITFM/TBM space is uniquely difficult. Our buyers — CIOs, CFOs, and IT Finance leaders at Fortune 500 companies and major government agencies — are sophisticated and skeptical. They've heard every vendor pitch, can spot generic copy from a mile away, and have no patience for content that doesn't speak intelligently to their problems.
+
+    When we engaged Wil, he had zero background in IT Financial Management. He'd never built a cost model, never run a chargeback program, never sat in on a quarterly IT budget defense. Most writers could never bridge that gap.
+
+    Wil ramped from zero to SME-level in a matter of weeks — producing collateral that read like the work of a 10-year ITFM practitioner, not a copywriter learning the acronyms.
+
+    He tactfully stoked our buyers' complex pain points, in their own language, and consistently drew a sharp line from that pain to our solutions. Our sales team had collateral they actually wanted to share with prospects, and prospects engaged with it.
+
+    If you're in a technical or specialist market and you're worried that no outside writer will ever really 'get it' — Wil is the exception.
+
+- name: "Lou Cozzolino"
+  org: "Lone Survivalist"
+  org_url: "https://lonesurvivalist.com/"
+  photo: "/images/lou_cozzolino.jpg"
+  text: |
+    "As a guy who built an affiliate company, solely through email, from $0 to $300,000 every month, if I could choose 1 guy to do it again with from scratch. 1 no nonsense writer. 1 entrepreneur to create compelling email, converting sales copy and day 1 profitable product funnels that can scale.
+
+    **I'd choose Wil because he was with me and built it to those staggering numbers along side me.**
+
+    There are just not that many people that have written, tested, and analyzed the amount of copy Wil has.
+
+    There are even fewer who have critiqued thousands of cold traffic emails, and made them work, while leading a team of 8 writers to do the same.
+
+    Frankly, copy is a key component that makes the rain inside any business. Most can't produce it. Less can analyze it. Less can teach it. Less can grow a profit line with it, day in and day out.
+
+    Wil does all of that.
+
+    Period."
+
+- name: "Ryan Healy"
+  org: "Upsender"
+  org_url: "https://upsender.com/"
+  photo: "/images/ryan_healy.jpg"
+  text: |
+    **"I've outsourced to other writers here and there, but Wil is my go-to guy when I need to outsource copy.**
+
+    He has excellent research skills. He's self-motivated. He hits deadlines. And he writes damn good copy.
+
+    I can toss him an idea and let him run with it without ever worrying if we're on the same page. He knows how to take feedback. He asks the right questions. Overall, he just "gets it."
+
+    His abilities are quickly eclipsing "up-and-comer" status, and I strongly recommend you work with him. (In fact, I often send him referrals.)
+
+    Just please don't send him too much work… I'd like to keep working with Wil for a long time. ;-)"
+
+- name: "Drew Kossoff — Rainmaker Ad Ventures"
+  source: linkedin
+  profile_url: "https://www.linkedin.com/in/drewkossoff/"
+  photo: "/images/linkedin/drew_kossoff.jpg"
+  text: |
+    I'm super impressed with Wil's ability to deliver quality copy on time and on budget. He is easy to work, gets things right the first time (e.g. doesn't require handholding or endless revisions) and will surely be an asset to anyone seeking a competent and reliable copywriter.
+
+- name: "James Wilder"
+  org: "Advertising Hustle"
+  org_url: "https://www.facebook.com/AdvertisingHustle"
+  photo: "/images/james_wilder.jpeg"
+  text: |
+    "Wil is an incredible copywriter.
+
+    He's able to immediately look at any copy, trim the fluff, and get the prospect to take action.
+
+    **His ability to whip up control-quality emails on the spot always amazes me.**
+
+    But he also knows how to lead and manage.
+
+    He's quick to celebrate team wins. While also happy to spend time helping and teaching others how to make their copy stronger and tighter.
+
+    You can tell he's driven from a place of helping everyone succeed. No ego.
+
+    I attribute a lot of my current copywriting skills to Wil's patience and coaching.
+
+    It's been a pleasure working with Wil, and wouldn't hesitate to do so again in the future."
+
+- name: "Amy Robertson Dornton — CMO, Nicus Software"
+  source: linkedin
+  profile_url: "https://www.linkedin.com/in/amydornton/"
+  photo: "/images/linkedin/amy_robertson.jpeg"
+  text: |
+    Wil has been an integral part of building the Marketing Team at Nicus. In a challenging industry with limited resources, Wil crafted exceptional content to generate demand for Nicus's solutions. He has been a fast learner, and his intellectual curiosity will continue to serve him well throughout his career. He was properly nicknamed the "Word Man" at Nicus for spinning any context into sweet lullaby. I'd not only recommend him; I'd hire him time and time again.
+
+- name: "Chris Dodds — Platform Engineer & IT Marketer"
+  source: linkedin
+  profile_url: "https://www.linkedin.com/in/doddschris/"
+  photo: "/images/linkedin/chris_dodds.jpeg"
+  text: |
+    Wil is a pleasure to work with. He's prompt and professional. Writing for different industries is always a challenge, but he's been able to quickly adapt to each client's unique voice and industry jargon and always delivers great copy that requires minimal (if any) editing. I wouldn't think twice about referring him or bringing him on-board for another project.
+
+- name: "Ben Steuart"
+  org: "Steuart's Natural Health"
+  org_url: "https://steuartsnatural.health/"
+  photo: "/images/ben_steuart.jpg"
+  text: |
+    "I was referred to Wil by Ryan Healy, whose schedule was too full to accommodate our landing page project. Wil had just started freelancing full-time, so his portfolio wasn't quite as filled out as the other copywriters we looked at. **But when we got back the first draft of our copy, we knew we'd made the right choice.**
+
+    His process was seamless, and he got the tone and voice for our audience almost perfect right out of the gate. He even found a great clinical study for an ingredient in our product that we had yet to discover ourselves. Then he integrated it right into the copy.
+
+    We're anxiously counting down till launch day so we can test it out!"
+
+- name: "Colleen Lawler — Director of ITFM Center of Excellence, Nicus Software"
+  source: linkedin
+  profile_url: "https://www.linkedin.com/in/colleen-lawler-a226837/"
+  photo: "/images/linkedin/colleen_lawler.jpeg"
+  text: |
+    I had the pleasure of working with Wil and highly recommend him. He is an extremely talented marketing writer with the ability to produce meaningful content with just a few conversations with subject matter experts. He has a strong work ethic and a desire to learn new things. I was impressed with how quickly he was able to understand and navigate a fairly technical topic like IT Financial Management. Beyond all of this he was a great team mate, always helpful and friendly, with an infectious positive attitude! Your organization would be lucky to have Wil!

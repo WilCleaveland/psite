@@ -1,86 +1,9 @@
-# LinkedIn Recommendations
-# -------------------------------------------------------------------------
-# This file is the single source of truth for LinkedIn recommendations
-# embedded on the site (homepage + /upwork/ testimonials sections).
+# DEPRECATED — kept as a stub only.
 #
-# To refresh:
-#   1. Log in to LinkedIn and navigate to:
-#      https://www.linkedin.com/in/wilcleaveland/details/recommendations/
-#   2. Make sure all recommendations are loaded (scroll to the bottom if
-#      LinkedIn lazy-loads them; click "Show more" if it appears).
-#   3. Click the "Harvest LinkedIn Recommendations" bookmarklet from your
-#      browser bookmarks bar. (See ../linkedin-bookmarklet.md for the
-#      one-time setup instructions.)
-#   4. The bookmarklet copies a YAML block to your clipboard. Paste it
-#      below the schema comment, replacing any prior entries.
-#   5. Profile photos: LinkedIn's CDN URLs are session-bound and won't
-#      hotlink from your site. If you want photos, right-click the photo
-#      on LinkedIn → Save image → save to /images/linkedin/ and reference
-#      the local path below. Photos are optional; entries without a
-#      `photo` field render with a colored monogram circle instead.
+# Testimonials (including LinkedIn-sourced ones) are now consolidated in
+# _data/testimonials.yml. Each LinkedIn entry there is flagged with
+# `source: linkedin`. This file is no longer referenced by any include.
 #
-# Schema for each entry:
-#   - name:         "Full name of the recommender"          (required)
-#     headline:     "Their LinkedIn headline / job title"   (optional)
-#     relationship: "Context line, e.g. 'Nate was Wil's client'" (optional)
-#     date:         "Month Year"                            (optional)
-#     text: |                                               (required)
-#       "Full recommendation text. YAML | preserves line breaks;
-#       use a blank line between paragraphs."
-#     profile_url:  "https://www.linkedin.com/in/..."       (optional)
-#     photo:        "/images/linkedin/firstname-lastname.jpg" (optional)
-# -------------------------------------------------------------------------
+# Safe to delete this file entirely.
 
-# Paste harvested recommendations below. Start the list with a hyphen `-`.
-# Leave this file with an empty array (`[]`) when you have no data to embed —
-# the include skips rendering anything when the list is empty.
-
-- name: "Colleen Lawler"
-  profile_url: "https://www.linkedin.com/in/colleen-lawler-a226837/"
-  text: |
-    I had the pleasure of working with Wil and highly recommend him.  He is an extremely talented marketing writer with the ability to produce meaningful content with just a few conversations with subject matter experts.   He has a strong work ethic and a desire to learn new things.  I was impressed with how quickly he was able to understand and navigate a fairly technical topic like IT Financial Management.  Beyond all of this he was a great team mate, always helpful and friendly, with an infectious positive attitude!  Your organization would be lucky to have Wil!
-
-- name: "Amy Robertson Dornton"
-  profile_url: "https://www.linkedin.com/in/amydornton/"
-  text: |
-    Wil has been an integral part of building the Marketing Team at Nicus. In a challenging industry with limited resources, Wil crafted exceptional content to generate demand for Nicus's solutions. He has been a fast learner, and his intellectual curiosity will continue to serve him well throughout his career. He was properly nicknamed the "Word Man" at Nicus for spinning any context into sweet lullaby. I'd not only recommend him; I'd hire him time and time again.
-
-- name: "Nichole Bennett Charney"
-  profile_url: "https://www.linkedin.com/in/nicholebennettcharney/"
-  text: |
-    I worked with Wil on multiple of my clients' blogs, and he was always on point! His work was truly stellar, and his content was always exactly what the client wanted. His powerful knowledge of SEO and polished client communication skills made him a true asset. He was always very thorough with his research, content creation and help with social promotion. Wil would be a great addition to any team or project!
-
-- name: "Getra Hanes-Selph"
-  profile_url: "https://www.linkedin.com/in/getra/"
-  text: |
-    One of the first big challenges of mobilizing the Preserve Roanoke movement was to get a solid web presence in place. Much to our supporters' appreciation, Wil took care of all the initial setup. He helped us buy a domain name, install Wordpress, source and customize a premium theme, and eventually backup and transfer the site to a new hosting account. The organization remains extremely grateful for his volunteer efforts.
-
-- name: "Stephanie Ekelmann"
-  profile_url: "https://www.linkedin.com/in/stephanie-ekelmann-6b4b6723/"
-  text: |
-    Wil was extremely easy to work with. He always produced a product that exceeded our expectation. One of the pieces Wil wrote for us got a ton of impressions and really our company out. He was available when we needed him and answered emails in a very timely manner. I would definitely recommend Wil!
-
-- name: "Adam Thompson"
-  profile_url: "https://www.linkedin.com/in/adamjthompson/"
-  text: |
-    Wil is a talented copywriter who knows well how to use engaging style and highly effective sales tactics to write compelling copy. He is an asset to our company and a results-driver for our clients.
-
-- name: "Chris Dodds"
-  profile_url: "https://www.linkedin.com/in/doddschris/"
-  text: |
-    Wil is a pleasure to work with. He's prompt and professional. Writing for different industries is always a challenge, but he’s been able to quickly adapt to each client’s unique voice and industry jargon and always delivers great copy that requires minimal (if any) editing. I wouldn’t think twice about referring him or bringing him on-board for another project.
-
-- name: "Melissa Rhone"
-  profile_url: "https://www.linkedin.com/in/melissarhone/"
-  text: |
-    I've worked with Wil on a number of projects. My experience with him has consistently shown off his sharp eye for strategy, adept writing abilities, and personable attitude. Wil's presence will be a positive force on any team!
-
-- name: "Nick Cobb"
-  profile_url: "https://www.linkedin.com/in/nickcobb/"
-  text: |
-    During my time with RYP Marketing, Wil has proven himself to be an incredibly detailed copyeditor/copywriter, a quick study on all things social, and, most importantly, he's an easy-to-work-with nice guy. You really couldn't have a kinder person on your team.
-
-- name: "Zachary Thompson"
-  profile_url: "https://www.linkedin.com/in/zacharythompson/"
-  text: |
-    Wil is a fast worker and learner.  He is very good with deadlines and communicates well.  His writing and editing skills are top notch.  He has helped develop professional content in a variety of industry verticals.
+[]

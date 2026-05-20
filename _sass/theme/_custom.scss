@@ -396,6 +396,62 @@ $linkedin-blue: #0a66c2;
   }
 }
 
+// Same LinkedIn treatment for the standalone /testimonials/ page's
+// .testimonial-card style. The card already has a big terracotta opening-
+// quote glyph via ::before, so the LinkedIn badge sits in the top-right
+// without conflict.
+.testimonial-card.linkedin-testimonial {
+  border-top: 3px solid $linkedin-blue;
+  padding-top: 44px;
+
+  .linkedin-badge {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: $linkedin-blue;
+    text-decoration: none !important;
+    transition: transform 0.15s ease, color 0.15s ease;
+
+    svg { width: 100%; height: 100%; display: block; }
+
+    &:hover,
+    &:focus {
+      color: darken($linkedin-blue, 10%);
+      transform: translateY(-1px);
+    }
+  }
+
+  // The opening-quote ::before is decorative for curated cards; on
+  // LinkedIn cards we dim it further so the LinkedIn badge takes the
+  // visual lead.
+  &::before { opacity: 0.08; }
+
+  // Monogram fallback for entries without a photo, dropped into the
+  // existing .tc-byline flex row in place of <img>.
+  .linkedin-monogram {
+    flex: 0 0 auto;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: $linkedin-blue;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1;
+    box-shadow: 0 2px 6px rgba(10, 102, 194, 0.25);
+    user-select: none;
+    border: 2px solid var(--color-base-bg);
+  }
+}
+
 // --------------------------------------------------------------------------
 // WORK-SAMPLE INTRO (Sicuro Brands etc.)
 // Opt-in via frontmatter: `sales_page_url` and/or `metrics`. Renders a

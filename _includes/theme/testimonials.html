@@ -1,0 +1,95 @@
+{%- comment -%}
+  Render the unified testimonials list from _data/testimonials.yml.
+
+  Usage:
+    {% include theme/testimonials.html style="upwork" %}   -- home + /upwork/
+    {% include theme/testimonials.html style="card" %}     -- /testimonials/
+
+  Optional parameters:
+    - filter (string) — "curated" or "linkedin" to render only that subset
+    - limit  (int)    — render at most N entries
+
+  Order on the page is determined by the order of entries in
+  _data/testimonials.yml. Each entry can either be a curated testimonial
+  (with name + org + org_url) or a LinkedIn-sourced one (flagged with
+  `source: linkedin`); see the comments in the data file for the schema.
+{%- endcomment -%}
+
+{%- assign style = include.style | default: "upwork" -%}
+{%- assign all_t = site.data.testimonials -%}
+{%- assign filtered = "" | split: "" -%}
+
+{%- for t in all_t -%}
+  {%- assign src = t.source | default: "curated" -%}
+  {%- if include.filter == nil or include.filter == "" or include.filter == src -%}
+    {%- assign filtered = filtered | push: t -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if include.limit -%}
+  {%- assign filtered = filtered | slice: 0, include.limit -%}
+{%- endif -%}
+
+{%- for t in filtered -%}
+  {%- assign is_linkedin = false -%}
+  {%- if t.source == "linkedin" -%}{%- assign is_linkedin = true -%}{%- endif -%}
+
+  {%- if style == "upwork" -%}
+    {%- unless forloop.first -%}<hr class="upwork-testimonial-divider">{%- endunless -%}
+    <div class="upwork-testimonial{% if is_linkedin %} linkedin-testimonial{% endif %}">
+      {%- if is_linkedin -%}
+        <a class="linkedin-badge" href="{{ t.profile_url | default: 'https://www.linkedin.com/in/wilcleaveland/details/recommendations/' }}" target="_blank" rel="noopener" aria-label="View {{ t.name | escape }} on LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43c-1.14 0-2.07-.93-2.07-2.07s.93-2.07 2.07-2.07c1.14 0 2.06.93 2.06 2.07 0 1.14-.92 2.07-2.06 2.07zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+      {%- endif -%}
+
+      {{ t.text | strip | markdownify }}
+
+      {%- if is_linkedin -%}
+        <div class="linkedin-byline">
+          {%- if t.photo -%}
+            <img src="{{ t.photo | relative_url }}" alt="{{ t.name | escape }}" loading="lazy">
+          {%- else -%}
+            {%- assign initial = t.name | slice: 0, 1 | upcase -%}
+            <span class="linkedin-monogram" aria-hidden="true">{{ initial }}</span>
+          {%- endif -%}
+          <div class="linkedin-byline-text">
+            <p class="source">
+              {%- if t.profile_url -%}— <a href="{{ t.profile_url }}" target="_blank" rel="noopener">{{ t.name }}</a>{%- else -%}— {{ t.name }}{%- endif -%}
+            </p>
+          </div>
+        </div>
+      {%- else -%}
+        {%- if t.photo -%}
+          <img src="{{ t.photo | relative_url }}" alt="{{ t.name | escape }}">
+        {%- endif -%}
+        <p class="source">— {{ t.name }}{% if t.org_url and t.org %}, <a href="{{ t.org_url }}">{{ t.org }}</a>{% elsif t.org %}, {{ t.org }}{% endif %}</p>
+      {%- endif -%}
+    </div>
+
+  {%- elsif style == "card" -%}
+    <div class="testimonial-card{% if is_linkedin %} linkedin-testimonial{% endif %}" markdown="0">
+      {%- if is_linkedin -%}
+        <a class="linkedin-badge" href="{{ t.profile_url | default: 'https://www.linkedin.com/in/wilcleaveland/details/recommendations/' }}" target="_blank" rel="noopener" aria-label="View {{ t.name | escape }} on LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43c-1.14 0-2.07-.93-2.07-2.07s.93-2.07 2.07-2.07c1.14 0 2.06.93 2.06 2.07 0 1.14-.92 2.07-2.06 2.07zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+      {%- endif -%}
+
+      {{ t.text | strip | markdownify }}
+
+      <div class="tc-byline">
+        {%- if t.photo -%}
+          <img src="{{ t.photo | relative_url }}" alt="{{ t.name | escape }}">
+        {%- elsif is_linkedin -%}
+          {%- assign initial = t.name | slice: 0, 1 | upcase -%}
+          <span class="linkedin-monogram" aria-hidden="true">{{ initial }}</span>
+        {%- endif -%}
+        <span class="tc-byline-text">
+          {%- if is_linkedin -%}— {%- if t.profile_url -%}<a href="{{ t.profile_url }}" target="_blank" rel="noopener">{{ t.name }}</a>{%- else -%}{{ t.name }}{%- endif -%}
+          {%- else -%}— {{ t.name }}{% if t.org_url and t.org %}, <a href="{{ t.org_url }}">{{ t.org }}</a>{% elsif t.org %}, {{ t.org }}{% endif -%}
+          {%- endif -%}
+        </span>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endfor -%}
