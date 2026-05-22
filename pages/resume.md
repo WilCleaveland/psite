@@ -1,12 +1,11 @@
 ---
 layout: basic
 title: "Resume"
-date: 2018-11-28T15:15:34+10:00
+date: 2026-05-22T15:15:34+10:00
 permalink: "/resume/"
-description: "What I've been up to..."
-image: 
+description: "Direct-response marketer & copywriter. $10M+ in tracked funnel revenue. AI-augmented marketing operations."
+image:
 align: "center"
 ---
-<iframe src="{{ site.url }}{{ site.baseurl }}/images/wilcleavelandresume.pdf#toolbar=0" width="100%" height="950px" style="margin-top:-50px;"> </iframe>
 
-
+{% include theme/resume-content.html %}

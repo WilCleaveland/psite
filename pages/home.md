@@ -126,7 +126,7 @@ meta_title: "Wil Cleaveland — Marketer in Roanoke, VA"
 <section id="resume" class="upwork-section">
   <div class="container">
     <h2 class="upwork-section-title">Resume</h2>
-    <iframe class="upwork-resume-frame" src="{{ '/images/wilcleavelandresume.pdf' | relative_url }}#toolbar=0"></iframe>
+    {% include theme/resume-content.html %}
   </div>
 </section>
 

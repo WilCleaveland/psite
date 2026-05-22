@@ -1,0 +1,266 @@
+{%- comment -%}
+  Rich resume content used in three places:
+    - pages/resume.md   (dedicated /resume/ page)
+    - pages/home.md     (homepage Resume section)
+    - pages/upwork.md   (/upwork/ Resume section)
+
+  Single source of truth so all three stay in sync. Update this file,
+  not the three pages.
+{%- endcomment -%}
+
+<div class="resume-content">
+
+  <!-- ============ SUMMARY ============ -->
+  <section class="resume-block resume-summary">
+    <h3>Summary</h3>
+    <p>Direct-response copywriter and marketer with 10+ years driving <strong>$10M+ in tracked sales funnel revenue</strong> across DTC ecommerce, SAAS B2B/B2G, and direct-response/info products. Specialist in email, SMS, list management, and CRO — equally comfortable shipping daily campaigns that hit $50k/week, ramping into technical specialist markets where buyer skepticism kills generic copy, and directing AI to ship production marketing infrastructure. Built and led copy teams of up to 8.</p>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="resume-block resume-skills">
+    <h3>Skills</h3>
+    <p class="skills-list">Direct-response copywriting · Email &amp; SMS marketing · List management &amp; deliverability · Conversion rate optimization (CRO) · Sales funnel copy · Lifecycle automation · Sales enablement &amp; B2B/SAAS content · Offer construction · Team leadership</p>
+    <p class="resume-stack"><strong>Stack:</strong> Maropost · Attentive · Shopify · GoHighLevel · Claude / Claude Code · Python (AI-paired) · Adobe Creative Suite</p>
+  </section>
+
+  <!-- ============ AI-AUGMENTED OPS ============ -->
+  <section class="resume-block resume-ai">
+    <h3>AI-Augmented Marketing Operations</h3>
+    <p class="ai-lede">Production tooling I've directed Claude to build and operate at Patriot Training Center — replacing what would have required a developer hire with AI-paired, marketer-led infrastructure. Each system below is live and supports the daily email program of a $5M+/yr direct-response brand.</p>
+
+    <div class="ai-projects">
+
+      <article class="ai-project">
+        <h4>UGAR Campaign System</h4>
+        <p>A Python pipeline that authors, audits, and pushes daily Maropost campaigns across multiple formats (Daily Style, Editorial PM, Daily 11am, and more). Dry-run mode for safe drafting; <code>--execute</code> for production push. Pre-flight auditor catches stale logos, body/text mismatches, broken affiliate links, and missing required elements before any send.</p>
+        <p class="ai-stack"><strong>Tools:</strong> Python · Maropost API · Claude Code</p>
+      </article>
+
+      <article class="ai-project">
+        <h4>Daily Hard-Bounce Suppression</h4>
+        <p>Scheduled, unattended task that runs every day: discovers all sent campaigns in the window, pulls bounce reports via the Maropost API, identifies hard bounces and mailbox-full SMTP codes, and updates the active suppression list. Reduces ESP costs by removing bad addresses before the next send and protects sender reputation.</p>
+        <p class="ai-stack"><strong>Tools:</strong> Python · Maropost API · macOS launchd / Claude scheduled tasks</p>
+      </article>
+
+      <article class="ai-project">
+        <h4>Click-Tracking Slug Infrastructure</h4>
+        <p>Custom redirect domain (<code>mail.preparedgunowners.com/&lt;slug&gt;</code>) that replaces long affiliate URLs in campaign body with branded short links. Server-side PHP redirector reads a client-uploaded mapping file and forwards to the affiliate URL with all tracking parameters intact (aff_sub, click_id, etc.). Reduces body clutter, improves deliverability, and gives the brand consistent click-tracking surface.</p>
+        <p class="ai-stack"><strong>Tools:</strong> PHP redirector · JSON mapping · Python author-side integration · Claude Code</p>
+      </article>
+
+      <article class="ai-project">
+        <h4>Cross-Platform API Integrations</h4>
+        <p>In-progress: a Konnektive CRM ⇄ Ottertext SMS tag-mapping layer. Customer segments defined in Konnektive (purchase history, tags, lifecycle stage) flow into Ottertext campaigns automatically — removing the manual list-pull step from the SMS send workflow. Foundation for unifying email + SMS audience targeting under one CRM-driven source of truth.</p>
+        <p class="ai-stack"><strong>Tools:</strong> Python · Konnektive API · Ottertext API · Claude Code</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="resume-block resume-experience">
+    <h3>Experience</h3>
+
+    <article class="resume-job">
+      <header class="resume-job-header">
+        <div class="resume-job-title"><strong>List Manager &amp; CRO Specialist</strong> — Patriot Training Center</div>
+        <div class="resume-job-dates">Jul 2025 – Present</div>
+      </header>
+      <ul>
+        <li>Direct-response marketing for a $5M+/yr firearms-niche brand — own email, SMS, funnel optimization, list hygiene, and CRO.</li>
+        <li>Manage email + SMS promotional calendars across both internal and affiliate offers; reduce Maropost ESP costs via in-depth list hygiene.</li>
+        <li>Direct AI-augmented Python tooling for the email program (see <a href="#" onclick="document.querySelector('.resume-ai').scrollIntoView({behavior:'smooth'}); return false;">AI-Augmented Marketing Operations</a> above).</li>
+        <li>Engineer GoHighLevel automation workflows for inbound campaigns; optimize landing pages and funnels for cold traffic alongside business founder.</li>
+      </ul>
+    </article>
+
+    <article class="resume-job">
+      <header class="resume-job-header">
+        <div class="resume-job-title"><strong>Chief Copywriter &amp; Internal Media Manager</strong> — Sicuro Brands</div>
+        <div class="resume-job-dates">Jul 2020 – Jul 2025</div>
+      </header>
+      <ul>
+        <li>Owned all messaging and copy for three DTC ecommerce brands — VNSH Holster, Pain Safari, and Modern Needs Survival.</li>
+        <li><strong>$10M+ in lifetime sales funnel revenue</strong> — VSLs, advertorials, order forms, upsells, downsells.</li>
+        <li>Maintained <strong>$50k+/week sustained email revenue</strong> from daily campaigns across brand lists.</li>
+        <li>Launched and scaled SMS program from zero to <strong>$20k+/week in revenue</strong>.</li>
+        <li>Ran CRO across funnels to elevate AOV and maintain profitability on cold traffic; analyzed COGS to construct new offers and improve live ones.</li>
+      </ul>
+    </article>
+
+    <article class="resume-job">
+      <header class="resume-job-header">
+        <div class="resume-job-title"><strong>SAAS Marketing Writer</strong> — Nicus Software</div>
+        <div class="resume-job-dates">Feb 2019 – Jun 2020</div>
+      </header>
+      <ul>
+        <li>Built the company's <strong>#1 gated lead-gen asset by total leads</strong> (the ITFM/TBM Maturity Guide) for CIOs, CFOs, and IT Finance leaders at Fortune 500 companies and major government agencies.</li>
+        <li>Authored four published customer case studies — Visa, City of Seattle, American Family, and a major State Agency — through direct conferral with each customer's IT/finance leadership.</li>
+        <li>Maintained sales enablement collateral across the product line; authored BDR outreach scripts for phone, email, and video that the sales team actively used and iterated.</li>
+      </ul>
+    </article>
+
+    <article class="resume-job">
+      <header class="resume-job-header">
+        <div class="resume-job-title"><strong>Direct-Response Copywriter</strong> — Independent Consultant</div>
+        <div class="resume-job-dates">Apr 2016 – Feb 2019</div>
+      </header>
+      <ul>
+        <li>Scaled email revenue to <strong>$300k/month</strong> for a survival/tactical client as copy team chief and list manager.</li>
+        <li>Wrote lead-gen advertorials for a financial direct-response client competing against Lending Tree and Eloan.</li>
+        <li>Consulted with biz-op direct-response businesses on increasing internal list revenue.</li>
+      </ul>
+    </article>
+
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="resume-block resume-education">
+    <h3>Education</h3>
+    <p><strong>Bachelor of Arts, Communication Studies</strong> — Roanoke College <span class="resume-edu-year">· 2013</span></p>
+  </section>
+
+  <!-- ============ PDF DOWNLOAD ============ -->
+  <div class="resume-pdf-cta">
+    <a href="{{ '/images/wilcleavelandresume.pdf' | relative_url }}" target="_blank" rel="noopener" class="resume-download">Download as PDF</a>
+  </div>
+
+</div>
+
+<style>
+  .resume-content {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--color-base-text);
+  }
+  .resume-block {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-base-bg-3);
+  }
+  .resume-block:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+  .resume-block h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.92rem;
+    color: #9e4a2b;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .resume-summary p {
+    font-size: 1.06rem;
+    line-height: 1.7;
+  }
+  .resume-skills .skills-list {
+    line-height: 1.8;
+  }
+  .resume-skills .resume-stack {
+    margin-top: 8px;
+    color: var(--color-base-text-2);
+  }
+  .resume-ai .ai-lede {
+    color: var(--color-base-text-2);
+    margin-bottom: 24px;
+    font-size: 0.98rem;
+  }
+  .resume-ai .ai-projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .resume-ai .ai-project {
+    background: var(--color-base-bg-2);
+    border: 1px solid var(--color-base-bg-3);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .resume-ai .ai-project h4 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: var(--color-base-text);
+  }
+  .resume-ai .ai-project p {
+    margin: 0 0 8px;
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+  .resume-ai .ai-stack {
+    font-size: 0.84rem;
+    color: var(--color-base-text-2);
+    margin-bottom: 0;
+  }
+  .resume-ai code {
+    background: var(--color-base-bg-3);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 0.88em;
+  }
+  @media (max-width: 720px) {
+    .resume-ai .ai-projects {
+      grid-template-columns: 1fr;
+    }
+  }
+  .resume-job {
+    margin-bottom: 22px;
+  }
+  .resume-job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .resume-job-title {
+    font-size: 1.02rem;
+  }
+  .resume-job-dates {
+    font-style: italic;
+    color: var(--color-base-text-2);
+    font-size: 0.94rem;
+    white-space: nowrap;
+  }
+  .resume-job ul {
+    margin: 4px 0 0;
+    padding-left: 22px;
+  }
+  .resume-job li {
+    margin-bottom: 4px;
+    line-height: 1.55;
+  }
+  .resume-education p {
+    margin: 0;
+  }
+  .resume-edu-year {
+    color: var(--color-base-text-2);
+    font-style: italic;
+  }
+  .resume-pdf-cta {
+    margin-top: 36px;
+    text-align: center;
+  }
+  .resume-download {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #9e4a2b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: background 0.15s ease, transform 0.15s ease;
+    box-shadow: 0 6px 16px rgba(63, 45, 20, 0.18);
+  }
+  .resume-download:hover {
+    background: #7a3920;
+    transform: translateY(-1px);
+    color: #fff;
+    text-decoration: none;
+  }
+</style>
