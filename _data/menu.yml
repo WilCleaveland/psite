@@ -11,17 +11,14 @@ main:
   - name: Work Samples
     url: /#work
     weight: 4
-  - name: Free Guide
-    url: /#ebook
-    weight: 5
   - name: LinkedIn
     url: "https://www.linkedin.com/in/wilcleaveland/"
     external: true
-    weight: 6
+    weight: 5
     enabled: false # flip to true to show in nav
   - name: Book a Call
     url: "https://calendly.com/wccleaveland"
     external: true
     button: true # renders as a terracotta filled pill (the CTA), see _custom.scss
-    weight: 7
+    weight: 6
     enabled: true

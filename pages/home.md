@@ -16,7 +16,6 @@ meta_title: "Wil Cleaveland — Marketer in Roanoke, VA"
     <a href="#resume" class="upwork-jump-item">Resume</a>
     <a href="#testimonials" class="upwork-jump-item">Testimonials</a>
     <a href="#work" class="upwork-jump-item">Work Samples</a>
-    <a href="#ebook" class="upwork-jump-item">Free Guide</a>
     <!-- The CTA pill is hidden by default; IntersectionObserver below
          adds .is-revealed to the parent nav once the hero CTA scrolls
          off-screen, fading this pill in as the persistent conversion
@@ -131,36 +130,6 @@ meta_title: "Wil Cleaveland — Marketer in Roanoke, VA"
 </section>
 
 <!-- ============================================================ -->
-<!-- FREE EBOOK OPT-IN                                             -->
-<!-- ============================================================ -->
-<section id="ebook" class="upwork-section">
-  <div class="container">
-    <h2 class="upwork-section-title">Free Email-Copy Guide</h2>
-    <p class="ebook-lede">Five lessons from $5M+ in email revenue — written for ecommerce operators and direct-response marketers who want to scale list income without burning out their audience. Drop your email and I'll send it over.</p>
-    <div class="ebook-card">
-      <img src="{{ '/images/ebook.png' | relative_url }}" alt="5 Lessons From $5M In Email Revenue" class="ebook-cover">
-      <div class="ebook-form-wrapper">
-        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-        <form action="https://app.kit.com/forms/7785183/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="7785183" data-uid="c28846bbbb" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Check your inbox. :) &quot;,&quot;redirect_url&quot;:&quot;&quot;}}}" min-width="400 500 600 700 800">
-          <div data-style="clean">
-            <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-            <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
-              <div class="formkit-field">
-                <input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Your best email address" required="" type="email">
-              </div>
-              <button data-element="submit" class="formkit-submit formkit-submit">
-                <div class="formkit-spinner"><div></div><div></div><div></div></div>
-                <span>Send me the guide</span>
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
 <!-- WORK FILTER JS + DYNAMIC JUMP-NAV CTA REVEAL                  -->
 <!-- ============================================================ -->
 <script>
@@ -260,89 +229,3 @@ meta_title: "Wil Cleaveland — Marketer in Roanoke, VA"
   })();
 </script>
 
-<!-- ============================================================ -->
-<!-- EBOOK SECTION STYLING                                         -->
-<!-- ============================================================ -->
-<style>
-  .ebook-lede {
-    max-width: 740px;
-    margin: -16px auto 36px;
-    text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--color-base-text-2);
-  }
-  .ebook-card {
-    max-width: 820px;
-    margin: 0 auto;
-    background: var(--color-base-bg-2);
-    border: 1px solid var(--color-base-bg-3);
-    border-radius: 16px;
-    padding: 40px;
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 40px;
-    align-items: center;
-    box-shadow:
-      0 1px 2px rgba(63, 45, 20, 0.05),
-      0 12px 28px -8px rgba(63, 45, 20, 0.14),
-      0 6px 14px -4px rgba(63, 45, 20, 0.06);
-  }
-  .ebook-cover {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 6px;
-    box-shadow: 0 6px 18px rgba(63, 45, 20, 0.18);
-  }
-  .ebook-form-wrapper .formkit-form {
-    max-width: 100%;
-  }
-  .ebook-form-wrapper .formkit-input {
-    width: 100%;
-    padding: 14px 16px;
-    border: 1px solid var(--color-base-bg-3);
-    border-radius: 8px;
-    background: #ffffff;
-    font-size: 1rem;
-    color: var(--color-base-text);
-    margin-bottom: 12px;
-  }
-  .ebook-form-wrapper .formkit-input:focus {
-    outline: none;
-    border-color: #9e4a2b;
-  }
-  .ebook-form-wrapper .formkit-submit {
-    width: 100%;
-    padding: 14px 28px;
-    background: #9e4a2b;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1.02rem;
-    letter-spacing: 0.02em;
-    cursor: pointer;
-    transition: background 0.15s ease, transform 0.15s ease;
-    box-shadow: 0 6px 16px rgba(63, 45, 20, 0.18);
-  }
-  .ebook-form-wrapper .formkit-submit:hover {
-    background: #7a3920;
-    transform: translateY(-1px);
-  }
-  .ebook-form-wrapper .formkit-submit > span {
-    color: #ffffff;
-  }
-  /* Hide the ConvertKit-branded "powered by" footer for a cleaner look. */
-  .ebook-form-wrapper .formkit-powered-by-convertkit-container { display: none; }
-
-  @media (max-width: 640px) {
-    .ebook-card {
-      grid-template-columns: 1fr;
-      padding: 28px 22px;
-      gap: 24px;
-      text-align: center;
-    }
-    .ebook-cover { max-width: 220px; margin: 0 auto; }
-  }
-</style>
