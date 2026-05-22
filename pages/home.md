@@ -36,8 +36,8 @@ meta_title: "Wil Cleaveland — Marketer in Roanoke, VA"
     <div class="row justify-content-center">
       <div class="col-12 col-md-10">
         <img src="{{ '/assets/images/avatar/avatar.jpg' | relative_url }}" alt="Wil Cleaveland" class="avatar" width="120" height="120">
-        <h1>I help online businesses move up and to the right.📈</h1>
-        <p class="intro-copy">Press the easy-button for scaling across both owned and paid media with someone who's done it before. Here are two quick videos from my best long-term partners.</p>
+        <h1>Performance Marketer | $10M in funnel revenue | AI-fluent</h1>
+        <p class="intro-copy">$10M+ in tracked funnel revenue over the last decade. Now also directing AI to ship production marketing infrastructure for the brands I work with. Two quick videos from my best long-term partners 👇</p>
         <div class="upwork-cta">
           <a href="https://calendly.com/wccleaveland" target="_blank" rel="noopener" class="status">
             <svg class="status-light" fill="#d4a744" viewBox="0 0 8 8">

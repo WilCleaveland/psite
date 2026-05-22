@@ -9,8 +9,8 @@ meta_title: Marketer in Roanoke, VA
 
 lead:
   enabled: true
-  heading: "I help online businesses move up and to the right.📈" 
-  description: "Press the easy-button for scaling across both owned and paid media with someone who's done it before. Here are two quick videos from my best long-term partners."
+  heading: "Performance Marketer | $10M in funnel revenue | AI-fluent"
+  description: "$10M+ in tracked funnel revenue over the last decade. Now also directing AI to ship production marketing infrastructure for the brands I work with. Two quick videos from my best long-term partners 👇"
   videos:
     - iframe: '<iframe src="https://streamyard.com/e/d4tdg38dsezp" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>'
     - iframe: '<iframe src="https://player.vimeo.com/video/1063842926?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Adam''s Testimonial - Sicuro Brands"></iframe>'
