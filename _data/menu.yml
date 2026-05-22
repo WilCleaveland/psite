@@ -2,14 +2,14 @@ main:
   - name: About
     url: /#about
     weight: 1
-  - name: Work Samples
-    url: /#work
+  - name: Resume
+    url: /#resume
     weight: 2
   - name: Testimonials
     url: /#testimonials
     weight: 3
-  - name: Resume
-    url: /#resume
+  - name: Work Samples
+    url: /#work
     weight: 4
   - name: Free Guide
     url: /#ebook

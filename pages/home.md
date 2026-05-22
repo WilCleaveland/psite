@@ -13,9 +13,9 @@ meta_title: "Wil Cleaveland — Marketer in Roanoke, VA"
 <nav class="upwork-jump-nav" id="home-jump-nav">
   <div class="container">
     <a href="#about" class="upwork-jump-item">About</a>
-    <a href="#work" class="upwork-jump-item">Work Samples</a>
-    <a href="#testimonials" class="upwork-jump-item">Testimonials</a>
     <a href="#resume" class="upwork-jump-item">Resume</a>
+    <a href="#testimonials" class="upwork-jump-item">Testimonials</a>
+    <a href="#work" class="upwork-jump-item">Work Samples</a>
     <a href="#ebook" class="upwork-jump-item">Free Guide</a>
     <!-- The CTA pill is hidden by default; IntersectionObserver below
          adds .is-revealed to the parent nav once the hero CTA scrolls
@@ -65,6 +65,31 @@ meta_title: "Wil Cleaveland — Marketer in Roanoke, VA"
 </section>
 
 <!-- ============================================================ -->
+<!-- RESUME                                                        -->
+<!-- ============================================================ -->
+<section id="resume" class="upwork-section">
+  <div class="container">
+    <h2 class="upwork-section-title">Resume</h2>
+    {% include theme/resume-content.html %}
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TESTIMONIALS                                                  -->
+<!-- ============================================================ -->
+<section id="testimonials" class="upwork-section">
+  <div class="container">
+    <h2 class="upwork-section-title">Testimonials</h2>
+
+    {%- comment -%}
+      All testimonials (curated + LinkedIn) live in _data/testimonials.yml.
+      Order on the page == order in that file.
+    {%- endcomment -%}
+    {% include theme/testimonials.html style="upwork" %}
+  </div>
+</section>
+
+<!-- ============================================================ -->
 <!-- WORK                                                          -->
 <!-- ============================================================ -->
 <section id="work" class="upwork-section">
@@ -102,31 +127,6 @@ meta_title: "Wil Cleaveland — Marketer in Roanoke, VA"
         </div>
       {% endfor %}
     </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- TESTIMONIALS                                                  -->
-<!-- ============================================================ -->
-<section id="testimonials" class="upwork-section">
-  <div class="container">
-    <h2 class="upwork-section-title">Testimonials</h2>
-
-    {%- comment -%}
-      All testimonials (curated + LinkedIn) live in _data/testimonials.yml.
-      Order on the page == order in that file.
-    {%- endcomment -%}
-    {% include theme/testimonials.html style="upwork" %}
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- RESUME                                                        -->
-<!-- ============================================================ -->
-<section id="resume" class="upwork-section">
-  <div class="container">
-    <h2 class="upwork-section-title">Resume</h2>
-    {% include theme/resume-content.html %}
   </div>
 </section>
 

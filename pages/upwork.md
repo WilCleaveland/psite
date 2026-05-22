@@ -12,9 +12,9 @@ noindex: true
 <nav class="upwork-jump-nav">
   <div class="container">
     <a href="#about" class="upwork-jump-item">About</a>
-    <a href="#work" class="upwork-jump-item">Work Samples</a>
-    <a href="#testimonials" class="upwork-jump-item">Testimonials</a>
     <a href="#resume" class="upwork-jump-item">Resume</a>
+    <a href="#testimonials" class="upwork-jump-item">Testimonials</a>
+    <a href="#work" class="upwork-jump-item">Work Samples</a>
   </div>
 </nav>
 
@@ -51,6 +51,31 @@ noindex: true
         <script src="https://player.vimeo.com/api/player.js"></script>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- RESUME                                                        -->
+<!-- ============================================================ -->
+<section id="resume" class="upwork-section">
+  <div class="container">
+    <h2 class="upwork-section-title">Resume</h2>
+    {% include theme/resume-content.html %}
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TESTIMONIALS                                                  -->
+<!-- ============================================================ -->
+<section id="testimonials" class="upwork-section">
+  <div class="container">
+    <h2 class="upwork-section-title">Testimonials</h2>
+
+    {%- comment -%}
+      All testimonials (curated + LinkedIn) live in _data/testimonials.yml.
+      Order on the page == order in that file.
+    {%- endcomment -%}
+    {% include theme/testimonials.html style="upwork" %}
   </div>
 </section>
 
@@ -92,31 +117,6 @@ noindex: true
         </div>
       {% endfor %}
     </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- TESTIMONIALS                                                  -->
-<!-- ============================================================ -->
-<section id="testimonials" class="upwork-section">
-  <div class="container">
-    <h2 class="upwork-section-title">Testimonials</h2>
-
-    {%- comment -%}
-      All testimonials (curated + LinkedIn) live in _data/testimonials.yml.
-      Order on the page == order in that file.
-    {%- endcomment -%}
-    {% include theme/testimonials.html style="upwork" %}
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- RESUME                                                        -->
-<!-- ============================================================ -->
-<section id="resume" class="upwork-section">
-  <div class="container">
-    <h2 class="upwork-section-title">Resume</h2>
-    {% include theme/resume-content.html %}
   </div>
 </section>
 
