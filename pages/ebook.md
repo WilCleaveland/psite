@@ -17,8 +17,9 @@ ebook_url: "/assets/5-lessons-from-5-m-in-email-revenue.pdf" # path to the ebook
   <ul style="text-align:left; display:inline-block; margin-bottom:0;">
     <li>The one-angle rule that decides an email's fate before the first line is written</li>
     <li>The zero-talent subject line fix most senders still skip</li>
-    <li>"Throat clearing" &mdash; the lead-killing habit, and the one-line cure</li>
-    <li>Why your cleverest line is costing you sales (and how to spot it)</li>
+    <li>"Throat clearing" &mdash; the lead-killing habit, plus 3 openings that never do it</li>
+    <li>The 3 conversion multipliers: mind-movies, claim-and-proof pairing, and the reason-for-the-deal</li>
+    <li>The 9-point pre-send checklist I run on every draft before it ships</li>
   </ul>
 </div>
 <img src="{{ site.url }}{{ site.baseurl }}/images/ebook.png" width="50%" style="margin-top:-20px; margin-bottom:-50px; display: block; margin-left: auto; margin-right: auto;"> 
