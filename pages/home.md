@@ -36,7 +36,7 @@ meta_title: "Wil Cleaveland — Growth & Lifecycle Marketer in Roanoke, VA"
       <div class="col-12 col-md-10">
         <img src="{{ '/assets/images/avatar/avatar.jpg' | relative_url }}" alt="Wil Cleaveland" class="avatar" width="120" height="120">
         <h1>Growth &amp; Lifecycle Marketer | $10M+ in funnel revenue | AI-fluent</h1>
-        <p class="intro-copy">Daily email and SMS campaigns, funnel copy, CRO, and the AI systems that ship it all faster. The resume and work samples below have the full story, or you can skip straight to two people who've paid me for years 👇</p>
+        <p class="intro-copy">Daily email and SMS campaigns, funnel copy, CRO, and the AI systems that ship it all faster.</p>
         <div class="upwork-cta">
           <a href="https://calendly.com/wccleaveland" target="_blank" rel="noopener" class="status">
             <svg class="status-light" fill="#d4a744" viewBox="0 0 8 8">
@@ -45,19 +45,6 @@ meta_title: "Wil Cleaveland — Growth & Lifecycle Marketer in Roanoke, VA"
             <span class="status-text">Book a Call</span>
           </a>
         </div>
-        <div class="video-stack">
-          <div class="video-stack-item">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://streamyard.com/e/d4tdg38dsezp" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-            </div>
-          </div>
-          <div class="video-stack-item">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://player.vimeo.com/video/1063842926?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Adam's Testimonial - Sicuro Brands"></iframe>
-            </div>
-          </div>
-        </div>
-        <script src="https://player.vimeo.com/api/player.js"></script>
       </div>
     </div>
   </div>

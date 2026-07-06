@@ -34,7 +34,20 @@
   {%- assign is_linkedin = false -%}
   {%- if t.source == "linkedin" -%}{%- assign is_linkedin = true -%}{%- endif -%}
 
-  {%- if style == "upwork" -%}
+  {%- if t.video -%}
+    {%- comment -%} Video testimonial tile: blurb up top, video, then byline {%- endcomment -%}
+    {%- if style == "upwork" -%}
+      {%- unless forloop.first -%}<hr class="upwork-testimonial-divider">{%- endunless -%}
+    {%- endif -%}
+    <div class="{% if style == 'card' %}testimonial-card{% else %}upwork-testimonial{% endif %} video-testimonial">
+      {{ t.text | strip | markdownify }}
+      <div class="ratio ratio-16x9" style="margin: 12px 0 16px;">
+        <iframe src="{{ t.video }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen loading="lazy" title="{{ t.name | escape }} video testimonial" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+      </div>
+      <p class="source">— {{ t.name }}{% if t.org_url and t.org %}, <a href="{{ t.org_url }}">{{ t.org }}</a>{% elsif t.org %}, {{ t.org }}{% endif %}</p>
+    </div>
+
+  {%- elsif style == "upwork" -%}
     {%- unless forloop.first -%}<hr class="upwork-testimonial-divider">{%- endunless -%}
     <div class="upwork-testimonial{% if is_linkedin %} linkedin-testimonial{% endif %}">
       {%- if is_linkedin -%}

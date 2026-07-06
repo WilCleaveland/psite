@@ -14,9 +14,9 @@ Your reader is standing in line at Chipotle with 4% battery. They do not have he
 
 So the discipline is simple, and brutal: pick the single strongest angle. Build the subject line on it. Spend the first three or four lines of body copy making that one angle vivid. If the other benefits deserve a mention, they get bullets near the bottom, after the sale is mostly made.
 
-Here's what that looked like in practice. I spent years writing for a percussion massage device for chronic pain. Real product, real list, real numbers. It had at least six distinct, true selling points: it works knots that foam rollers can't reach, it replaces an expensive habit rather than starting one, it's cheaper than a single month of physical therapy, it fits in a gym bag.
+Here's what that looked like in practice. One of the products I wrote daily emails for had at least six distinct, true selling points. Real product, real list, real numbers. Every one of those six could have carried its own campaign.
 
-The drafts that tried to use three of those at once read like brochures and earned like brochures. The winners each committed to exactly one, and the campaign rotated angles across sends instead of cramming them into each send.
+The drafts that tried to use three of them at once read like brochures and earned like brochures. The winners each committed to exactly one, and the campaign rotated angles across sends instead of cramming them into each send.
 
 That rotation is the part people miss. One angle per email doesn't mean you only get one angle. It means each angle gets its own at-bat. Over a month, the list hears every selling point you have, one clean swing at a time, and you learn precisely which angles pull because nothing muddied the test.
 

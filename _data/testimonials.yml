@@ -40,6 +40,18 @@
 # `source: linkedin` to each entry before saving.
 # -------------------------------------------------------------------------
 
+- name: "Caleb Osborne"
+  org: "Patriot Training Center"
+  video: "https://streamyard.com/e/d4tdg38dsezp"
+  text: |
+    **"Frankly, one of the best hires that we've had... he's just one of those people you don't have to explain things to twice. He just gets it."**
+
+- name: "Adam Lantelme"
+  org: "Sicuro Brands"
+  video: "https://player.vimeo.com/video/1063842926?badge=0&autopause=0&player_id=0&app_id=58479"
+  text: |
+    **"Going on seven years now, I don't think there's anybody better when it comes to writing front-end copy, email copy, and even SMS copy... I'd hire him all day, over and over again."**
+
 - name: "Nathan Hopkins"
   org: "Sicuro Brands"
   org_url: "https://sicurobrands.com/"
