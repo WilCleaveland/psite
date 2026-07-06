@@ -1,7 +1,7 @@
 ---
 featured: true
 title: "Modern Needs Survival Sauna Bag"
-description: "Getting a decent AOV for cold traffic was a tough nut to crack, but we eventually got there with MQ pricing that offers a juicy free bonus for quantities of 4+. 🤠"
+description: "Cold traffic on this offer only became profitable after AOV work — a multi-quantity pricing structure with a free-bonus threshold at 4+ units. A good example of fixing offer economics instead of just rewriting copy."
 metrics:
   - { value: "$1.5M", label: "Lifetime Gross Revenue (internal + cold)" }
   - { value: "3.7%",  label: "Conversion Rate at Launch" }

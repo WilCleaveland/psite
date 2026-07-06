@@ -1,10 +1,10 @@
 ---
 layout: upwork
-title: "Wil Cleaveland — Direct-Response Marketer & Copywriter"
+title: "Wil Cleaveland — Growth & Lifecycle Marketer"
 permalink: "/"
-description: "Appalachian direct-response and ecommerce marketer. $10M+ in revenue over the last 5 years."
-meta_description: "Responsible for $10M+ in revenue in the past 5 years."
-meta_title: "Wil Cleaveland — Marketer in Roanoke, VA"
+description: "Growth and lifecycle marketer with 10+ years of direct-response experience. $10M+ in tracked sales funnel revenue."
+meta_description: "Growth & lifecycle marketer — $10M+ in tracked sales funnel revenue across DTC ecommerce, B2B/B2G SaaS, and info products."
+meta_title: "Wil Cleaveland — Growth & Lifecycle Marketer in Roanoke, VA"
 ---
 
 <!-- ============================================================ -->
@@ -35,8 +35,8 @@ meta_title: "Wil Cleaveland — Marketer in Roanoke, VA"
     <div class="row justify-content-center">
       <div class="col-12 col-md-10">
         <img src="{{ '/assets/images/avatar/avatar.jpg' | relative_url }}" alt="Wil Cleaveland" class="avatar" width="120" height="120">
-        <h1>Performance Marketer | $10M in funnel revenue | AI-fluent</h1>
-        <p class="intro-copy">$10M+ in tracked funnel revenue over the last decade. Now also directing AI to ship production marketing infrastructure for the brands I work with. Two quick videos from my best long-term partners 👇</p>
+        <h1>Growth &amp; Lifecycle Marketer | $10M+ in funnel revenue | AI-fluent</h1>
+        <p class="intro-copy">$10M+ in tracked funnel revenue over the last decade — turning cold prospects into paying customers across DTC ecommerce, B2B SaaS, and info products. Now also directing AI to ship production marketing infrastructure for the brands I work with. Two quick videos from my best long-term partners 👇</p>
         <div class="upwork-cta">
           <a href="https://calendly.com/wccleaveland" target="_blank" rel="noopener" class="status">
             <svg class="status-light" fill="#d4a744" viewBox="0 0 8 8">

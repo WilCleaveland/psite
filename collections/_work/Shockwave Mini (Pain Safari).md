@@ -1,7 +1,7 @@
 ---
 featured: true
 title: "Pain Safari Shockwave Mini"
-description: "Despite being hamstrung by not being able to run cold traffic, this offer has been a consistent winner for over a year."
+description: "An internal-list offer that has stayed a consistent winner for over a year — sustained by fresh angles, seasonal hooks, and disciplined list rotation rather than cold-traffic spend."
 metrics:
   - { value: "$300K", label: "Lifetime Gross Revenue (email/SMS only)" }
   - { value: "6.2%",  label: "Conversion Rate" }

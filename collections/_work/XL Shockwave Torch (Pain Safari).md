@@ -1,7 +1,7 @@
 ---
 featured: true
 title: "Pain Safari XL Shockwave"
-description: "What can I say? This thing really is terrifying, which made it a pretty easy sell for our audience."
+description: "A personal-security offer with strong built-in demonstration appeal. The funnel leaned into show-don't-tell product proof, which kept conversion high across the email list."
 metrics:
   - { value: "$350K", label: "Lifetime Gross Revenue (email/SMS only)" }
   - { value: "3.8%",  label: "Conversion Rate" }
