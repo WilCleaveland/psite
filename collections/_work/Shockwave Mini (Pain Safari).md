@@ -1,4 +1,5 @@
 ---
+featured: true
 title: "Pain Safari Shockwave Mini"
 description: "Despite being hamstrung by not being able to run cold traffic, this offer has been a consistent winner for over a year."
 metrics:

@@ -1,4 +1,5 @@
 ---
+featured: true
 title: "Pain Safari XL Shockwave"
 description: "What can I say? This thing really is terrifying, which made it a pretty easy sell for our audience."
 metrics:

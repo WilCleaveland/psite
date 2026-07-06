@@ -1,4 +1,5 @@
 ---
+featured: true
 title: "Nicus Blog Posts (30+)"
 description: "A multi-year run of blog content for Nicus covering cost modeling pitfalls, chargeback strategy, ITFM/TBM program design, CIO-CFO alignment, recession playbooks for IT, and more. Each piece is linked below — most are still live on nicus.com.<br><br>- 30+ live posts<br>- Audience: CIOs, IT Finance leaders, TBM practitioners<br>- Mix of how-to, framework, and POV pieces<br>"
 date: 2022-12-15T10:00:00+10:00

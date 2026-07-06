@@ -1,4 +1,5 @@
 ---
+featured: true
 title: "Sicuro Abandon Cart Journeys"
 description: "A collection of abandon-cart email sequences I wrote for Sicuro Brands. Six sequences across the VNSH and Modern Needs portfolios — layering courtesy reminder → price-increase urgency → discount → reservation-expiry to win back the cart. Click any email below to read the copy.<br><br>- 6 journeys / 21 emails<br>- VNSH and Modern Needs offers<br>- Layered urgency, scarcity, and discount logic<br>"
 date: 2025-03-15T10:00:00+10:00

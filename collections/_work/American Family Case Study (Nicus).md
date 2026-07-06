@@ -1,4 +1,5 @@
 ---
+featured: true
 title: "American Family Insurance Case Study"
 description: "Wrote this Fortune 500 case study chronicling how American Family Insurance partnered IT and Corporate Finance to gain cross-organizational cost transparency across 25 operating divisions and 2,600 agents — and stopped guessing about IT spend.<br><br>- Cross-organizational IT cost transparency<br>- Reduced staff hours on TCO studies<br>- Supported new chargeback methodology<br>"
 date: 2020-06-15T10:00:00+10:00

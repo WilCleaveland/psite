@@ -95,8 +95,12 @@ meta_title: "Wil Cleaveland — Marketer in Roanoke, VA"
   <div class="container">
     <h2 class="upwork-section-title">Work Samples</h2>
 
-    {%- comment -%} Collect every unique category across all work items {%- endcomment -%}
-    {% assign cards = site.work | sort: 'date' | reverse %}
+    {%- comment -%}
+      The homepage grid only shows samples flagged `featured: true` in their
+      front matter — the employer-facing cut. The full archive (including the
+      tactical/firearms direct-response work) stays browsable at /work/.
+    {%- endcomment -%}
+    {% assign cards = site.work | where: "featured", true | sort: 'date' | reverse %}
     {% assign all_cats = "" | split: "" %}
     {% for card in cards %}
       {% for cat in card.categories %}
@@ -126,6 +130,10 @@ meta_title: "Wil Cleaveland — Marketer in Roanoke, VA"
         </div>
       {% endfor %}
     </div>
+
+    <p class="text-center mt-3">
+      <a href="{{ '/work/' | relative_url }}">Browse the complete work archive &rarr;</a>
+    </p>
   </div>
 </section>
 

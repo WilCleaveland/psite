@@ -1,4 +1,5 @@
 ---
+featured: true
 title: "ITFM/TBM Program Maturity Guide — eBook"
 description: "An eBook framing the ITFM/TBM program maturity model across four dimensions — People, Process, Technology, and Data. Built to give IT Finance buyers a shared vocabulary for diagnosing their current state and mapping a credible path forward.<br><br>- 4-dimension maturity framework<br>- Designed for sales-enablement and BOFU demand gen<br>- Each section anchored to a real customer pattern<br>"
 date: 2022-08-20T10:00:00+10:00

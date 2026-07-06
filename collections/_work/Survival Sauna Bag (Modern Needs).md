@@ -1,4 +1,5 @@
 ---
+featured: true
 title: "Modern Needs Survival Sauna Bag"
 description: "Getting a decent AOV for cold traffic was a tough nut to crack, but we eventually got there with MQ pricing that offers a juicy free bonus for quantities of 4+. 🤠"
 metrics:

@@ -1,6 +1,7 @@
 ---
+featured: true
 title: "Modern Needs Ready Filter"
-description: "Despite being a bit knock-off, we had very good luck using this product as a front-end offer, and I was able to drive solid performance on the back-end of the funnel."
+description: "A value-priced front-end offer in a crowded category — it converted well on cold traffic, and I drove solid performance on the back-end of the funnel."
 metrics:
   - { value: "$500K", label: "Lifetime Gross Revenue (internal + cold)" }
   - { value: "3.2%",  label: "Conversion Rate at Launch" }

@@ -1,4 +1,5 @@
 ---
+featured: true
 title: "Advanced Cost Transparency — Datasheet"
 description: "Premium-tier product sheet for Nicus's Advanced Cost Transparency module. Adds service & application TCO, public cloud integrations, business capability views, and the bill of IT (showback or chargeback) on top of the core cost modeling engine."
 date: 2024-02-15T10:00:00+10:00
