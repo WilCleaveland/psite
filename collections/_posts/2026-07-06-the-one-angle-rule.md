@@ -22,4 +22,4 @@ That rotation is the part people miss. One angle per email doesn't mean you only
 
 Abundance is a trap. The angle you commit to beats the six you juggle.
 
-*This is the first of the five rules in my free guide, [5 Lessons From $5M+ In Email Revenue](/ebook/). The other four are shorter and meaner.*
+*This is the first of the five rules in my free field guide, [Burn Your Thesaurus](/ebook/). The other four are shorter and meaner.*
