@@ -5,6 +5,7 @@ date: 2018-11-28T15:15:34+10:00
 permalink: "/ebook/"
 description: ""
 meta_title: "Burn Your Thesaurus — 5 Hard Rules From $5M+ In Email Revenue (Free)"
+meta_image: "/images/ebook.png"
 meta_description: "The 5 hard rules and 3 conversion multipliers behind $50K+/week email programs. A free field guide from a decade of direct-response email."
 image: 
 align: "center"
