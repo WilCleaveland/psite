@@ -1,9 +1,9 @@
 ---
 layout: basic
-title: ""
+title: "Burn Your Thesaurus"
 date: 2018-11-28T15:15:34+10:00
 permalink: "/ebook/"
-description: ""
+description: "5 hard rules from $5M+ in email revenue"
 meta_title: "Burn Your Thesaurus — 5 Hard Rules From $5M+ In Email Revenue (Free)"
 meta_image: "/images/ebook.png"
 meta_description: "The 5 hard rules and 3 conversion multipliers behind $50K+/week email programs. A free field guide from a decade of direct-response email."
@@ -13,8 +13,6 @@ show_form: true # flip to false to swap the email opt-in for a direct download l
 ebook_url: "/assets/5-lessons-from-5-m-in-email-revenue.pdf" # path to the ebook file
 ---
 <div style="text-align:center; max-width:640px; margin: 0 auto;">
-  <h1 style="line-height:1.15;">Burn Your Thesaurus</h1>
-  <p style="font-size:1.2rem; font-weight:600; margin-top:-8px;">5 hard rules from $5M+ in email revenue</p>
   <p style="font-size:1.1rem;">Ten years of daily direct-response email, compressed into a field guide you can read in one sitting. No theory &mdash; just the rules I actually write by, running programs that held $50K+/week for years.</p>
   <ul style="text-align:left; display:inline-block; margin-bottom:0;">
     <li>The one-angle rule that decides an email's fate before the first line is written</li>
