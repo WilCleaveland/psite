@@ -17,6 +17,10 @@ ebook_url: "/assets/5-lessons-from-5-m-in-email-revenue.pdf" # path to the ebook
      Hero padding is 60px sitewide; the lead-capture page wants the headline
      closer to the nav and less dead air around the cover + form. */
   .page-basic .section:not(.pt-0) { padding-top: 20px; padding-bottom: 20px; }
+  /* Terracotta brand headline to match the site's section titles. */
+  .page-basic .intro h1 { color: #9e4a2b; }
+  /* Kill the subhead's 28px bottom margin; the 20px section padding is enough. */
+  .page-basic .intro p { margin-bottom: 0; }
   .ebook-lede p, .ebook-lede li { font-size: 1.1rem; line-height: 1.5; }
   .ebook-lede li { margin-bottom: 12px; }
   .ebook-lede li:last-child { margin-bottom: 0; }
