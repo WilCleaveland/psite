@@ -16,7 +16,7 @@ ebook_url: "/assets/5-lessons-from-5-m-in-email-revenue.pdf" # path to the ebook
   /* Page-only tweaks for /ebook/ (this block ships with this page alone).
      Hero padding is 60px sitewide; the lead-capture page wants the headline
      closer to the nav and less dead air around the cover + form. */
-  .page-basic .section:not(.pt-0) { padding-top: 20px; }
+  .page-basic .section:not(.pt-0) { padding-top: 20px; padding-bottom: 20px; }
   .ebook-lede p, .ebook-lede li { font-size: 1.1rem; line-height: 1.5; }
   .ebook-lede li { margin-bottom: 12px; }
   .ebook-lede li:last-child { margin-bottom: 0; }
