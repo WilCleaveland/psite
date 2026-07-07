@@ -22,6 +22,9 @@ ebook_url: "/assets/5-lessons-from-5-m-in-email-revenue.pdf" # path to the ebook
   /* Kill the subhead's 28px bottom margin; the 20px section padding is enough. */
   .page-basic .intro p { margin-bottom: 0; }
   .ebook-lede p, .ebook-lede li { font-size: 1.1rem; line-height: 1.5; }
+  /* Tighten the lede paragraph into the bullets below it. */
+  .ebook-lede p { margin-bottom: 8px; }
+  .ebook-lede ul { margin-top: 0; }
   .ebook-lede li { margin-bottom: 12px; }
   .ebook-lede li:last-child { margin-bottom: 0; }
   /* Kit form: kill its 56px built-in top padding and restyle the inline
@@ -29,6 +32,9 @@ ebook_url: "/assets/5-lessons-from-5-m-in-email-revenue.pdf" # path to the ebook
   .formkit-form[data-uid="c28846bbbb"] [data-style="clean"] { padding-top: 0 !important; }
   .formkit-form[data-uid="c28846bbbb"] .formkit-submit { background-color: #9e4a2b !important; }
   .page-basic .section.pt-0 { padding-bottom: 24px; }
+  /* Drop the 1px inter-section divider; the sitewide `.section + .section`
+     rule is heavily specific, so match its shape and outrank it. */
+  body.page-basic .section + .section:not(.section-base-bg-2):not(.section-base-bg-3) { border-top: none; }
 </style>
 <div class="ebook-lede" style="text-align:center; max-width:640px; margin: 0 auto;">
   <p>Ten years of daily direct-response email, compressed into a field guide you can read in one sitting. No theory &mdash; just the rules I actually write by, running programs that held $50K+/week for years.</p>
