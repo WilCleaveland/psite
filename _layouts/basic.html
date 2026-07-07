@@ -3,18 +3,24 @@ layout: default
 body_classes: page-basic
 ---
 
+{% assign intro_image = page.image | default: "" %}
+{% assign intro_title = page.title | default: "" %}
+{% assign intro_desc = page.description | default: "" %}
+{% assign has_intro = false %}
+{% if intro_image != "" or intro_title != "" or intro_desc != "" %}
+{% assign has_intro = true %}
 <div class="section">
   <div class="container">
     <div class="row justify-content-center align-items-center">
       <div class="col-12 col-md-10 ">
         <div class="intro">
-          {% if page.image %}
+          {% if intro_image != "" %}
           <img width="1280" height="720" alt="{{ page.heading }}" class="img-fluid" src="{{ page.image | relative_url }}"/>
           {% endif %}
-          {% if page.title %}
+          {% if intro_title != "" %}
           <h1>{{ page.title }}</h1>
           {% endif %}
-          {% if page.description %}
+          {% if intro_desc != "" %}
           <p>{{ page.description }}</p>
           {% endif %}
         </div>
@@ -22,9 +28,10 @@ body_classes: page-basic
     </div>
   </div>
 </div>
+{% endif %}
 
 {% if content %}
-<div class="section pt-0">
+<div class="section{% if has_intro %} pt-0{% endif %}">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-lg-8">
